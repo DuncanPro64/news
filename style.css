@@ -38,6 +38,14 @@
   margin: 0;
   padding: 0; }
 
+.social{
+  /*height: 100px;*/
+  height: 180px;
+  padding: 20px;
+  /*background: linear-gradient(#FFFFFF,grey,white);*/
+  padding-bottom: 10px;
+}
+
 
 body {
   font-family: "Roboto", sans-serif;
