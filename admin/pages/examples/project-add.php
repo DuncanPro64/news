@@ -1,24 +1,27 @@
 <?php
 $db = mysqli_connect('localhost', 'root', '', 'vibes');
-  $email="";
-  $name="";
-  $subject="";
-  $message="";
-  $date="";
+  $title="";
+  $description="";
+  $budget="";
+  $start_date="";
+  $end_date="";
+  $status="";
 
   $update= false;
-  if(isset($_POST['send'])){
-    $email=$_POST['email'];
-    $name=$_POST['name'];
-    $subject=$_POST['subject'];
-     $message=$_POST['message'];
-    $date=date("Y/m/d");
+  if(isset($_POST['create'])){
+    $title=$_POST['title'];
+    $description=$_POST['description'];
+    $start_date=$_POST['start_date'];
+     $end_date=$_POST['end_date'];
+     $status=$_POST['status'];
+     $budget=$_POST['budget'];
+   
     
      
-    $add=mysqli_query($db,"INSERT INTO messages(m_subject,sender_mail,message,date) VALUES ('$subject','$email','$message','$date')") or die(mysqli_error($db));
+    $add=mysqli_query($db,"INSERT INTO project(p_title,p_description,status,budget,start_date,end_date) VALUES ('$title','$description', '$status','$budget','$start_date','$end_date')") or die(mysqli_error($db));
     
 if($add==true){
-    $_session['message']="message inserted successfully";
+    $_session['message']="project created successfully";
   
       }
       else{
@@ -352,18 +355,19 @@ if($add==true){
                 </button>
               </div>
             </div>
+            <form method="POST" action="project-add.php">
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Project Name</label>
-                <input type="text" id="inputName" class="form-control">
+                <input type="text" id="inputName" name="title" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputDescription">Project Description</label>
-                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                <textarea id="inputDescription" name="description" class="form-control" rows="4"></textarea>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Status</label>
-                <select id="inputStatus" class="form-control custom-select">
+                <select id="inputStatus" name="status" class="form-control custom-select">
                   <option selected disabled>Select one</option>
                   <option>On Hold</option>
                   <option>Canceled</option>
@@ -397,7 +401,7 @@ if($add==true){
             <div class="card-body">
               <div class="form-group">
                 <label for="inputEstimatedBudget">Estimated budget</label>
-                <input type="number" id="inputEstimatedBudget" class="form-control">
+                <input type="number" id="inputEstimatedBudget" name="budget" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputSpentBudget">Total amount spent</label>
@@ -408,6 +412,36 @@ if($add==true){
                 <input type="number" id="inputEstimatedDuration" class="form-control">
               </div>
             </div>
+           <div class="card-body">
+                <!-- Date dd/mm/yyyy -->
+                <div class="form-group">
+                  <label>Date masks:</label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                   <label for="end_date">Start Date</label>
+                <input type="date" id="start_date" name="start_date" class="form-control">
+                  </div>
+                  <!-- /.input group -->
+                </div>
+                <!-- /.form group -->
+
+                <!-- Date mm/dd/yyyy -->
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                    <label for="end_date">Estimated End date</label>
+                <input type="date" id="end_date" name="end_date" class="form-control">
+                  </div>
+                  <!-- /.input group -->
+                </div>
+
+              
+            </div>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
@@ -416,7 +450,8 @@ if($add==true){
       <div class="row">
         <div class="col-12">
           <a href="#" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Create new Porject" class="btn btn-success float-right">
+          <input type="submit" name="create" value="Create new Porject" class="btn btn-success float-right">
+          </form>
         </div>
       </div>
     </section>
