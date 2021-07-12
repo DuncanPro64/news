@@ -22,11 +22,11 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start </p>
+      <p class="login-box-msg">SIGN IN </p>
 
-      <form action=" " method="post">
+      <form action=" log_process.php" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -52,25 +52,18 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block" name="submit">Sign In</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-      </div>
-      <!-- /.social-auth-links -->
-
       <p class="mb-1">
         <a href="forgot-password.html">I forgot my password</a>
+        <a href="register.php" class="text-center"><span style="color: black;">|</span>Create a new account</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Create a new account</a>
+        <!-- <a href="register.html" class="text-center">Create a new account</a> -->
       </p>
     </div>
     <!-- /.login-card-body -->

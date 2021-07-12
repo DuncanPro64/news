@@ -1,3 +1,7 @@
+<?php require('../connection.php')  ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +28,7 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Create a new account</p>
 
-      <form action="../../index.html" method="post">
+      <form action="reg_process.php" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="firstname" placeholder="First name">
           <div class="input-group-append">
@@ -49,35 +53,40 @@
             </div>
           </div>
         </div>
-        <div class="form-group">
-                  <!-- <label>University</label> -->
-                  <select class="form-control select2" style="width: 100%;" name="campus">
-                    <option selected="selected">University</option>
-                    <?php
+     
+        <?php
+          echo'<div class="form-group">
+                    <!-- <label>University</label> -->
+          <select class="form-control select2" style="width: 100%;" name="campus">
+            <option selected="selected">University</option>';
 
-                    $sql = 'SELECT * FROM campus'
-                    <option value="">Multimedia</option>
-                    <option>UON</option>
-                    <option>KU</option>
-                    <option>Cooperative</option>
-                    <option>Kisumu Poly</option>
-                    <option>Maasai Mara</option>
+            $sql = 'SELECT * FROM campus';
+            $result = mysqli_query($con,$sql);
+              if ($result) {
+                while ($row =mysqli_fetch_assoc($result)) {
+                  echo'<option value="'.$row['campus_id'].'">'.$row['campus_name'].'</option>';
+                }
+              }
+                  echo'  </select>
+                  </div>';
+                   ?>
 
-                    ?>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <!-- <label>University</label> -->
-                  <select class="form-control select2" style="width: 100%;" name="category">
-                    <option selected="selected">Field of interest</option>
-                    <option>Politics</option>
-                    <option>Business</option>
-                    <option>Fashion</option>
-                    <option>Sports</option>
-                    <option>Entertainment</option>
-                    <option>Campus Gossip</option>
-                  </select>
-                </div>
+               <?php
+                    echo'<div class="form-group">
+                              <!-- <label>University</label> -->
+                    <select class="form-control select2" style="width: 100%;" name="category">
+                      <option selected="selected">Field of Interest</option>';
+
+                      $sql = 'SELECT * FROM category';
+                      $result = mysqli_query($con,$sql);
+                        if ($result) {
+                          while ($row =mysqli_fetch_assoc($result)) {
+                            echo'<option value="'.$row['cat_name'].'">'.$row['cat_name'].'</option>';
+                          }
+                        }
+                        echo'  </select>
+                          </div>';
+                 ?>
             <div class="input-group mb-3">
           <input type="password" class="form-control" name="password" placeholder="Password">
           <div class="input-group-append">
@@ -87,7 +96,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retype password">
+          <input type="password" class="form-control" name="password2" placeholder="Retype password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
