@@ -1,29 +1,29 @@
-<?php
-$db = mysqli_connect('localhost', 'root', '', 'vibes');
-  $email="";
-  $name="";
-  $category="";
-  $date="";
+    <?php
+        $db = mysqli_connect('localhost', 'root', '', 'vibes');
+          $email="";
+          $name="";
+          $category="";
+          $date="";
 
-  $update= false;
-  if(isset($_POST['subscribe'])){
-    $email=$_POST['email'];
-    $name=$_POST['name'];
-    $category=$_POST['category'];
-    $date=date("Y/m/d");
-    
-     
-    $add=mysqli_query($db,"INSERT INTO subscriber(name,email,category,date) VALUES ('$name','$email','$category','$date')") or die(mysqli_error($db));
-    
-if($add==true){
-    $_session['message']="article created successfully.";
-  
-      }
-      else{
-        echo "failed";
-      }     
-    
-   }
+          $update= false;
+          if(isset($_POST['subscribe'])){
+            $email=$_POST['email'];
+            $name=$_POST['name'];
+            $category=$_POST['category'];
+            $date=date("Y/m/d");
+            
+             
+            $add=mysqli_query($db,"INSERT INTO subscriber(name,email,category,date) VALUES ('$name','$email','$category','$date')") or die(mysqli_error($db));
+            
+        if($add==true){
+            $_session['message']="article created successfully.";
+          
+              }
+              else{
+                echo "failed";
+              }     
+            
+           }
 ?>
 
 
@@ -117,23 +117,23 @@ if($add==true){
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="catagories-post.html">Catagories</a></li>
-                                            <li><a href="single-post.html">Single Articles</a></li>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="#">Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="catagories-post.html">Catagories</a></li>
-                                                    <li><a href="single-post.html">Single Articles</a></li>
-                                                    <li><a href="about.html">About Us</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                </ul>
-                                            </li>
+                                     <?php
+                                    echo'<li class="active"><a href="index.html">Home</a></li>
+                                    <li><a href="#">Categories</a>
+                                        <ul class="dropdown">';
+                                            
+                                            $query = 'SELECT * FROM category';
+                                            $result = mysqli_query($db,$query);
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                           
+                                              echo'   
+
+                                              <li><a href="single-post.php?category='.$row['cat_id'].'">'.$row['cat_name'].'</a></li>';
+                                                 }
+                                                    
+                                                echo'
+                                            </li>';
+                                            ?>
                                         </ul>
                                     </li>
                                     <li><a href="#">More</a>
@@ -575,13 +575,16 @@ if($add==true){
                         <form action="index.php" method="post">
                             <input type="text" name="name" placeholder="Name">
                             <input type="email" name="email" placeholder="Email">
-                            <select name="category">
-                                <option>Politics</option>
-                                 <option>Gossip</option>
-                                 <option>Business</option>
-                                <option>Sports</option>
-                            </select>
+                        <div class="form-group">
+                            <!-- <label>University</label> -->
+                  <select class="form-control select2" style="width: 100%;" name="campus">
+                    <option selected="selected">Select Category</option>';
+
+                        <option value="politics">politics</option>
+                    </select>
+                </div>
                         
+                                
                             <button type="submit" name='subscribe' class="btn w-100">Subscribe</button>
                         </form>
                     </div>
