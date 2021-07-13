@@ -154,24 +154,22 @@
                 <h3 class="card-title">Make a Publication</h3>
               </div>
               <!-- /.card-header -->
+
+
+
+              <!-- publishing form -->
               
               <form action="publish.php" method="POST">
               <div class="card-body">
+                <div class="form-group">
+                  <input class="form-control" placeholder="Title" name="title">
+                </div>
 
-               
+               <!-- compose area -->
                 <div class="form-group">
                     <textarea id="compose-textarea" class="form-control" style="height: 300px" name="content">
-                      <h1><u>News Heading</u></h1>
-                      <h4>Subheading goes here</h4>
-                      <p>content goes here</p>
-                      <ul>
-                        <li>List item one</li>
-                        <li>List item two</li>
-                        <li>List item three</li>
-                        <li>List item four</li>
-                      </ul>
-                      <p>Thank you,</p>
-                      <p>John Doe</p>
+                      Your content goes here
+                     
                     </textarea>
                 </div>
                 <div class="form-group">
