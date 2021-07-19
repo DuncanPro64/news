@@ -1,6 +1,6 @@
 
 <?php
-include('connection.php');
+ $con = mysqli_connect('localhost', 'root', '', 'vibes');
 
 ?>
 
@@ -320,11 +320,13 @@ include('connection.php');
 
                         // $query3="SELECT * FROM  "
                         // while ($row {
-                    foreach ($row as $row) {
-                        $query = "SELECT * FROM category  INNER JOIN article ON 1=article.category_id LIMIT 2 ";
-                        $result = mysqli_query($con,$query) or die(mysqli_error($con));
-                        $row = mysqli_fetch_assoc($result) or die(mysqli_error($con));
-                        
+                   
+                        $query = "SELECT * FROM category as c INNER JOIN article as a ON c.cat_id=a.category_id LIMIT 2 ";
+                        $row= mysqli_query($con,$query) or die(mysqli_error($con));
+                       
+                         foreach ($row as $rr) {
+                        $cut_string = $rr['content'];
+                        $content = substr($cut_string, 0,100);    
 
                         echo'
                             <!-- Single Post -->
@@ -334,9 +336,9 @@ include('connection.php');
                                         <a href="#"><img src="img/bg-img/12.jpg" alt=""></a>
                                     </div>
                                     <div class="post-data">
-                                        <a href="#" class="post-catagory">'.$row['cat_name'].'</a>
+                                        <a href="#" class="post-catagory">'.$rr['cat_name'].'</a>
                                         <a href="#" class="post-title">
-                                            <h6>Dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
+                                            <h6>'.$content.'</h6>
                                         </a>
                                         <div class="post-meta d-flex align-items-center">
                                             <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
@@ -561,7 +563,8 @@ include('connection.php');
                             foreach($row as $get) {
                                 $i = 1;
                                 $content = $row['content'];
-                                $content = substr($content, 0);
+                                $content = substr($content, 0,100);
+
                                 echo'<div class="single-popular-post">
                                     <a href="#">
                                         <h6><span>'.$i.'.</span> '.$content.'</h6>
@@ -593,25 +596,29 @@ include('connection.php');
 
 
                             <!-- Single Comments -->
-                            <?php
 
-                            $query = "SELECT * FROM comment LIMIT 4";
-                            $result = mysqli_query($con,$query) or die(mysqli_error($con));
-                            $row = mysqli_fetch_assoc($result) or die(mysqli_error($con));
-                            while ($row) {
-                            $content = $row['content'];
-                            $content = substr($content,0,18);
-                            echo'<div class="single-comments d-flex">
+                            <?php
+                             $query6 = "SELECT * FROM comment";
+                            $row = mysqli_query($con,$query6) or die(mysqli_error($con));
+                            
+                            while($rr=mysqli_fetch_array($row)){
+   
+                                ?>
+                            
+
+                           
+                            
+                            
+                            <div class="single-comments d-flex">
                                 <div class="comments-thumbnail mr-15">
                                     <img src="img/bg-img/29.jpg" alt="">
                                 </div>
                                 <div class="comments-text">
-                                    <a href="#">'.$row['date'].'<span>on</span> '.$content.'</a>
-                                    <p>'.$row['date'].'</p>
+                                    <a href="#"><?php echo $rr['content'] ?><br><span>on</span> <?php echo  $rr['date'] ?></a>
+                                    <p><?php $rr['date'] ?></p>
                                 </div>
                             </div>';
-                            }
-                            ?>
+                           <?php }?>
 
                             <!-- Single Comments -->
                 
