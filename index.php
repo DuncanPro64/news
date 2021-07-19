@@ -65,7 +65,7 @@
                         <div class="top-header-content d-flex align-items-center justify-content-between">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html"><img src="img/core-img/logo.gif" alt="" width="310px"></a>
+                                <a href="index.php"><img src="img/core-img/logo.gif" alt="" width="310px"></a>
                             </div>
 
                             <!-- Login Search Area -->
@@ -228,9 +228,22 @@
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
-                                <li><a href="single-post.html">Nairobi university under siege.</a></li>
-                                <li><a href="single-post.html">Students of MMU striking against poor final exam handling</a></li>
-                                <li><a href="single-post.html">Good news to campus students as Helb disburses loans</a></li>
+                                <?php
+$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+        INNER JOIN category AS c
+        ON o.category_id=c.cat_id 
+        INNER JOIN comment AS d
+      ON o.article_id=d.article_id
+      INNER JOIN editor AS e
+      ON e.email=o.editor_id ");
+
+
+
+while($rr=mysqli_fetch_array($row)){
+    ?>
+                                <li><a href="single-post.html"><?php echo $rr['article_title']; ?></a></li>
+                            <?php }?>
+                                
                             </ul>
                         </div>
                     </div>
@@ -242,7 +255,21 @@
                         </div>
                         <div id="internationalTicker" class="ticker">
                             <ul>
-                                <li><a href="single-post.html">Trump's son in law has just died</a></li>
+                                                            <?php
+$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+        INNER JOIN category AS c
+        ON o.category_id=c.cat_id 
+        INNER JOIN comment AS d
+      ON o.article_id=d.article_id
+      INNER JOIN editor AS e
+      ON e.email=o.editor_id ");
+
+
+
+while($rr=mysqli_fetch_array($row)){
+    ?>
+                                <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?></a></li>
+                            <?php }?>
                                 <li><a href="single-post.html">Computer scients have finally solved the long standing travelling sales man problem</a></li>
                                 <li><a href="single-post.html">Microsoft looses billions of money after computer hackers take  down machines and servers operating on windows ten </a></li>
                             </ul>
@@ -267,126 +294,114 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-8">
                     <div class="row">
-
                         <!-- Single Featured Post -->
+
                         <div class="col-12 col-lg-7">
+                                                        <?php
+$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+        INNER JOIN category AS c
+        ON o.category_id=c.cat_id 
+        INNER JOIN comment AS d
+      ON o.article_id=d.article_id
+      INNER JOIN editor AS e
+      ON e.email=o.editor_id LIMIT 1");
+
+
+
+while($rr=mysqli_fetch_array($row)){
+    ?>
                             <div class="single-blog-post featured-post">
                                 <div class="post-thumb">
                                     <a href="#"><img src="img/bg-img/16.jpg" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="single-post.html" class="post-catagory">Finance</a>
-                                    <a href="single-post.html" class="post-title">
-                                        <h6>Financial news: A new company is born today at the stock market</h6>
+                                    <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>" class="post-catagory"><?php echo $rr['cat_name']; ?></a>
+                                    <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"  class="post-title">
+                                        <h6><?php echo $rr['article_title']; ?></h6>
                                     </a>
                                     <div class="post-meta">
-                                        <p class="post-author">By <a href="single-post.html">Christinne Williams</a></p>
-                                        <p class="post-excerp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lectus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem. </p>
+                                        <p class="post-author">By  <a href="single-post.html"><?php echo $rr['f_name']; ?>  <?php echo $rr['l_name']; ?></a></p>
+                                        <p class="post-excerp"><?php echo $rr['article_title']; ?></p>
                                         <!-- Post Like & Post Comment -->
                                         <div class="d-flex align-items-center">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
+                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span><?php echo $rr['likes']; ?></span></a>
+                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $rr['count']; ?></span></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <?php } ?>
                         </div>
-
+                        
+       
                         <div class="col-12 col-lg-5">
                             <!-- Single Featured Post -->
+                            <?php
+$select = mysqli_query($db, "SELECT c.cat_name, c.cat_id, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+        INNER JOIN category AS c
+        ON o.category_id=c.cat_id 
+        INNER JOIN comment AS d
+      ON o.article_id=d.article_id LIMIT 2");
+
+
+
+while($rr=mysqli_fetch_array($select)){
+    ?>
                             <div class="single-blog-post featured-post-2">
                                 <div class="post-thumb">
                                     <a href="#"><img src="img/bg-img/17.jpg" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="single-post.html" class="post-catagory">Finance</a>
+                                    <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>" class="post-catagory"><?php echo $rr['cat_name']; ?></a>
                                     <div class="post-meta">
                                         <a href="#" class="post-title">
-                                            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac...</h6>
+                                            <h6><?php echo $rr['article_title']; ?></h6>
                                         </a>
                                         <!-- Post Like & Post Comment -->
                                         <div class="d-flex align-items-center">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
+                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span><?php echo $rr['likes']; ?></span></a>
+                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $rr['count']; ?></span></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+<?php } ?>
                             <!-- Single Featured Post -->
-                            <div class="single-blog-post featured-post-2">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/18.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="single-post.html" class="post-catagory">Finance</a>
-                                    <div class="post-meta">
-                                        <a href="#" class="post-title">
-                                            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac...</h6>
-                                        </a>
-                                        <!-- Post Like & Post Comment -->
-                                        <div class="d-flex align-items-center">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Featured Post -->
-                    <div class="single-blog-post small-featured-post d-flex">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="single-post.html" class="post-catagory">Finance</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-title">
-                                    <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                </a>
-                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <?php
+  
+$select = mysqli_query($db, "SELECT c.cat_name, c.cat_id, o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM category as c
+        INNER JOIN article AS o
+        ON c.cat_id=o.category_id LIMIT 6 ");
 
-                    <!-- Single Featured Post -->
-                    <div class="single-blog-post small-featured-post d-flex">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="single-post.html" class="post-catagory">Politics</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-title">
-                                    <h6>Sed a elit euismod augue semper congue sit amet ac sapien.</h6>
-                                </a>
-                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Single Featured Post -->
+
+while($rr=mysqli_fetch_array($select)){
+    ?>
+       
                     <div class="single-blog-post small-featured-post d-flex">
                         <div class="post-thumb">
                             <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
                         </div>
                         <div class="post-data">
-                            <a href="single-post.html" class="post-catagory">Health</a>
+                            <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>" class="post-catagory"><?php echo $rr['cat_name']; ?></a>
                             <div class="post-meta">
                                 <a href="#" class="post-title">
-                                    <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                    <h6><?php echo $rr['article_title']; ?></h6>
                                 </a>
-                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                <p class="post-date"><span><?php echo date('g:ia', strtotime($rr['timestamp']));?></span> | <span><?php echo date('F d Y', strtotime($rr['date'])); ?></span></p>
                             </div>
                         </div>
                     </div>
-
+<?php } ?>
                     <!-- Single Featured Post -->
-                    <div class="single-blog-post small-featured-post d-flex">
+                    <!--div class="single-blog-post small-featured-post d-flex">
                         <div class="post-thumb">
                             <a href="#"><img src="img/bg-img/22.jpg" alt=""></a>
                         </div>
@@ -399,10 +414,10 @@
                                 <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!-- Single Featured Post -->
-                    <div class="single-blog-post small-featured-post d-flex">
+                    <!--div class="single-blog-post small-featured-post d-flex">
                         <div class="post-thumb">
                             <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
                         </div>
@@ -415,10 +430,10 @@
                                 <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!-- Single Featured Post -->
-                    <div class="single-blog-post small-featured-post d-flex">
+                    <!--div class="single-blog-post small-featured-post d-flex">
                         <div class="post-thumb">
                             <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
                         </div>
@@ -431,7 +446,7 @@
                                 <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -451,21 +466,36 @@
 
                         <!-- Single Post -->
                         <div class="col-12 col-md-6">
+                                                                                    <?php
+$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+        INNER JOIN category AS c
+        ON o.category_id=c.cat_id 
+        INNER JOIN comment AS d
+      ON o.article_id=d.article_id
+      INNER JOIN editor AS e
+      ON e.email=o.editor_id LIMIT 1");
+
+
+
+while($rr=mysqli_fetch_array($row)){
+    ?>
+        
                             <div class="single-blog-post style-3">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/12.jpg" alt=""></a>
+                                    <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><img src="img/bg-img/12.jpg" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
+                                    <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>" class="post-catagory"><?php echo $rr['cat_name']; ?></a>
                                     <a href="#" class="post-title">
-                                        <h6>Dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
+                                        <h6><?php echo $rr['article_title']; ?></h6>
                                     </a>
                                     <div class="post-meta d-flex align-items-center">
-                                        <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
+                                        <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>" class="post-like"><img src="img/core-img/like.png" alt=""> <span><?php echo $rr['likes']; ?></span></a>
+                                        <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $rr['count']; ?></span></a>
                                     </div>
                                 </div>
                             </div>
+                        <?php } ?>
                         </div>
 
                         <!-- Single Post -->
@@ -489,6 +519,7 @@
 
                         <!-- Single Post -->
                         <div class="col-12 col-md-6">
+
                             <div class="single-blog-post style-3">
                                 <div class="post-thumb">
                                     <a href="#"><img src="img/bg-img/14.jpg" alt=""></a>
@@ -536,37 +567,31 @@
                         <h3>4 Most Popular News</h3>
 
                         <!-- Single Popular Blog -->
-                        <div class="single-popular-post">
-                            <a href="#">
-                                <h6><span>1.</span> Amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales.</h6>
-                            </a>
-                            <p>April 14, 2018</p>
-                        </div>
+                                                                                   <?php
+$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+        INNER JOIN category AS c
+        ON o.category_id=c.cat_id 
+        INNER JOIN comment AS d
+      ON o.article_id=d.article_id
+      INNER JOIN editor AS e
+      ON e.email=o.editor_id LIMIT 6");
+
+
+
+while($rr=mysqli_fetch_array($row)){
+    ?>
+                       
 
                         <!-- Single Popular Blog -->
                         <div class="single-popular-post">
                             <a href="#">
-                                <h6><span>2.</span> Consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer.</h6>
+                                <h6><span>2.</span> <?php echo $rr['article_title']; ?></h6>
                             </a>
-                            <p>April 14, 2018</p>
+                            <p><?php echo date('F d ,Y', strtotime($rr['date'])); ?></p>
                         </div>
-
+<?php } ?>
                         <!-- Single Popular Blog -->
-                        <div class="single-popular-post">
-                            <a href="#">
-                                <h6><span>3.</span> Adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo.</h6>
-                            </a>
-                            <p>April 14, 2018</p>
-                        </div>
-
-                        <!-- Single Popular Blog -->
-                        <div class="single-popular-post">
-                            <a href="#">
-                                <h6><span>4.</span> Eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                            </a>
-                            <p>April 14, 2018</p>
-                        </div>
-                    </div>
+                        
 
                     <!-- Newsletter Widget -->
                     <div class="newsletter-widget">
@@ -649,19 +674,33 @@
 
                         <!-- Single Post -->
                         <div class="col-12 col-lg-4">
+                            <?php
+$row2 = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+        INNER JOIN category AS c
+        ON o.category_id=c.cat_id 
+        INNER JOIN comment AS d
+      ON o.article_id=d.article_id
+      INNER JOIN editor AS e
+      ON e.email=o.editor_id LIMIT 1");
+
+
+
+while($rr=mysqli_fetch_array($row2)){
+    ?>
                             <div class="single-blog-post">
                                 <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/1.jpg" alt=""></a>
+                                    <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><img src="img/bg-img/1.jpg" alt=""></a>
                                 </div>
                                 <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Orci varius natoque penatibus et magnis dis parturient montes.</h6>
+                                    <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>" class="post-title">
+                                        <h6><?php echo $rr['article_title']; ?></h6>
                                     </a>
                                     <div class="post-meta">
-                                        <div class="post-date"><a href="#">February 11, 2018</a></div>
+                                        <div class="post-date"><a href="#"><?php echo date('F d ,Y', strtotime($rr['date'])); ?></a></div>
                                     </div>
                                 </div>
                             </div>
+                        <?php } ?>
                         </div>
 
                         <!-- Single Post -->
@@ -758,80 +797,34 @@
                     </div>
 
                     <!-- Single Post -->
+                    <?php
+$row2 = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+        INNER JOIN category AS c
+        ON o.category_id=c.cat_id 
+        INNER JOIN comment AS d
+      ON o.article_id=d.article_id
+      INNER JOIN editor AS e
+      ON e.email=o.editor_id LIMIT 6");
+
+
+
+while($rr=mysqli_fetch_array($row2)){
+    ?>
                     <div class="single-blog-post style-2">
                         <div class="post-thumb">
                             <a href="#"><img src="img/bg-img/7.jpg" alt=""></a>
                         </div>
                         <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Orci varius natoque penatibus et magnis</h6>
+                            <a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>" class="post-title">
+                                <h6><?php echo $rr['article_title']; ?></h6>
                             </a>
                             <div class="post-meta">
-                                <div class="post-date"><a href="#">February 11, 2018</a></div>
+                                <div class="post-date"><a href="#"><?php echo date('F d ,Y', strtotime($rr['date'])); ?></a></div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Single Post -->
-                    <div class="single-blog-post style-2">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/8.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Orci varius natoque penatibus et magnis</h6>
-                            </a>
-                            <div class="post-meta">
-                                <div class="post-date"><a href="#">February 11, 2018</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Post -->
-                    <div class="single-blog-post style-2">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/9.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Orci varius natoque penatibus et magnis</h6>
-                            </a>
-                            <div class="post-meta">
-                                <div class="post-date"><a href="#">February 11, 2018</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Post -->
-                    <div class="single-blog-post style-2">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/10.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Orci varius natoque penatibus et magnis</h6>
-                            </a>
-                            <div class="post-meta">
-                                <div class="post-date"><a href="#">February 11, 2018</a></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Post -->
-                    <div class="single-blog-post style-2">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/11.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Orci varius natoque penatibus et magnis</h6>
-                            </a>
-                            <div class="post-meta">
-                                <div class="post-date"><a href="#">February 11, 2018</a></div>
-                            </div>
-                        </div>
-                    </div>
-
+<?php }?>
+                    
                 </div>
             </div>
         </div>

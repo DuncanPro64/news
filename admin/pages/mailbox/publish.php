@@ -22,7 +22,7 @@ if (isset($_POST['publish'])) {
 		$cat_id = $category_result['cat_id'];
 		// editor id
 		$editor_id = $row['email'];
-		$content = $_POST['content']; 
+		$content = mysqli_real_escape_string($con,$_POST['content']); 
 		$article_title = $_POST['title']; 
 		// echo $cat_id;
 		// $cat_id = (int)$cat_id;
