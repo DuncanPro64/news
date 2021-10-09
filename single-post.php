@@ -1,6 +1,7 @@
 
 <?php
- $con = mysqli_connect('localhost', 'root', '@Dun0714757251', 'vibes');
+ // $con = mysqli_connect('localhost', 'root', '@Dun0714757251', 'vibes');
+include('connection.php');
 
 ?>
 
@@ -555,25 +556,31 @@
 
 
                             <!-- Single Popular Blog -->
-                            <?php
+                           <?php
+            $row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+                    INNER JOIN category AS c
+                    ON o.category_id=c.cat_id 
+                    INNER JOIN comment AS d
+                  ON o.article_id=d.article_id
+                  INNER JOIN editor AS e
+                  ON e.email=o.editor_id LIMIT 6");
 
-                            $sql='SELECT content,timestamp FROM article LIMIT 4';
-                            $sql_result = mysqli_query($con,$sql) or die(mysqli_error($con)) ;
-                            $row = mysqli_fetch_assoc($sql_result)or die(mysqli_error($con));
-                            foreach($row as $get) {
-                                $i = 1;
-                                $content = $row['content'];
-                                $content = substr($content, 0,100);
 
-                                echo'<div class="single-popular-post">
-                                    <a href="#">
-                                        <h6><span>'.$i.'.</span> '.$content.'</h6>
-                                    </a>
-                                    <p>'.$row['timestamp'].'</p>
-                                </div>';
-                                $i++;
-                        }
-                            ?>
+
+
+            while($rr=mysqli_fetch_array($row)){
+                ?>
+                                   
+
+                                    <!-- Single Popular Blog -->
+                                    <div class="single-popular-post">
+                                        <a href="#">
+                                            <h6><span>2.</span> <?php echo $rr['article_title']; ?></h6>
+                                        </a>
+                                        <p><?php echo date('F d ,Y', strtotime($rr['date'])); ?></p>
+                                    </div>
+            <?php } ?>
+
 
                             <!-- Single Popular Blog -->
                    
