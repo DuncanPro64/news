@@ -15,7 +15,7 @@
             $date=date("Y/m/d");
             
              
-            $add=mysqli_query($db,"INSERT INTO subscriber(name,email,category,date) VALUES ('$name','$email','$category','$date')") or die(mysqli_error($db));
+            $add=mysqli_query($con,"INSERT INTO subscriber(name,email,category,date) VALUES ('$name','$email','$category','$date')") or die(mysqli_error($con));
             
         if($add==true){
             $_session['message']="article created successfully.";
@@ -135,7 +135,7 @@ while($rr=mysqli_fetch_array($select)){
                     
                     <?php
   
-$select = mysqli_query($db, "SELECT c.cat_name, c.cat_id, o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM category as c
+$select = mysqli_query($con, "SELECT c.cat_name, c.cat_id, o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM category as c
         INNER JOIN article AS o
         ON c.cat_id=o.category_id LIMIT 6 ");
 
@@ -180,7 +180,7 @@ while($rr=mysqli_fetch_array($select)){
                         <!-- Single Post -->
                         <!-- <div class="col-12 col-md-6"> -->
         <?php
-$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+$row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d
@@ -226,7 +226,7 @@ while($rr=mysqli_fetch_array($row)){
 
                         <!-- Single Popular Blog -->
                                                                                                <?php
-            $row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
                     INNER JOIN category AS c
                     ON o.category_id=c.cat_id 
                     INNER JOIN comment AS d
@@ -335,7 +335,7 @@ while($rr=mysqli_fetch_array($row)){
                         <!-- <div class="col-12 col-lg-4"> -->
 
 <?php
-$row2 = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+$row2 = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d
@@ -378,7 +378,7 @@ while($rr=mysqli_fetch_array($row2)){
 
                     <!-- Single Post -->
                     <?php
-$row2 = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+$row2 = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d
