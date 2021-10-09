@@ -142,42 +142,17 @@ include('connection.php');
                         <div class="comment_area clearfix">
                             <h5 class="title">3 Comments</h5>
 
-                            <ol>
-                                <!-- Single Comment Area -->
-                                <li class="single_comment_area">
-                                    <!-- Comment Content -->
-                                    <div class="comment-content d-flex">
-                                        <!-- Comment Author -->
-                                        <div class="comment-author">
-                                            <img src="img/bg-img/30.jpg" alt="author">
-                                        </div>
-                                        <!-- Comment Meta -->
-                                        <div class="comment-meta">
-                                            <a href="#" class="post-author">Christian Williams</a>
-                                            <a href="#" class="post-date">April 15, 2018</a>
-                                            <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellen tesque lectus et accu msan aliquam. Fusce lobortis cursus quam, id mattis sapien.</p>
-                                        </div>
-                                    </div>
                                     <ol class="children">
-                                        <li class="single_comment_area">
-                                            <!-- Comment Content -->
-                                            <div class="comment-content d-flex">
-                                                <!-- Comment Author -->
-                                                <div class="comment-author">
-                                                    <img src="img/bg-img/31.jpg" alt="author">
-                                                </div>
-                                                <!-- Comment Meta -->
-                                                <div class="comment-meta">
-                                                    <a href="#" class="post-author">Sandy Doe</a>
-                                                    <a href="#" class="post-date">April 15, 2018</a>
-                                                    <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellen tesque lectus et accu msan aliquam. Fusce lobortis cursus quam, id mattis sapien.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </li>
+                                        
 
                                 <!-- Single Comment Area -->
+                                <?php
+                             $query6 = "SELECT * FROM comment LIMIT 4";
+                            $row = mysqli_query($con,$query6) or die(mysqli_error($con));
+                            
+                            while($rr=mysqli_fetch_array($row)){
+   
+                                ?>
                                 <li class="single_comment_area">
                                     <!-- Comment Content -->
                                     <div class="comment-content d-flex">
@@ -187,11 +162,13 @@ include('connection.php');
                                         </div>
                                         <!-- Comment Meta -->
                                         <div class="comment-meta">
-                                            <a href="#" class="post-author">Christian Williams</a>
-                                            <a href="#" class="post-date">April 15, 2018</a>
-                                            <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellen tesque lectus et accu msan aliquam. Fusce lobortis cursus quam, id mattis sapien.</p>
+                                            <a href="#" class="post-author"><?php echo $rr['commenter_name']; ?></a>
+                                            <a href="#" class="post-date"><?php echo date('F d, Y', strtotime($rr['date'])); ?></a>
+                                            <p><?php echo $rr['content']; ?></p>
                                         </div>
                                     </div>
+                                     <?php }?>
+
                                 </li>
                             </ol>
                         </div>
@@ -324,8 +301,8 @@ while($rr=mysqli_fetch_array($select)){
                                     <img src="img/bg-img/29.jpg" alt="">
                                 </div>
                                 <div class="comments-text">
-                                    <a href="#"><?php echo $rr['content'] ?><br><span>on</span> <?php echo  $rr['date'] ?></a>
-                                    <p><?php $rr['date'] ?></p>
+                                    <a href="#"><?php echo $rr['content'] ?><br><span>on</span> <?php echo date('F d ,Y', strtotime($rr['date'])); ?></a>
+                                    <p><?php echo date('F d ,Y', strtotime($rr['date'])); ?></p>
                                 </div>
                             </div>
                            <?php }?>
