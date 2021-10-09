@@ -242,7 +242,7 @@ $row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_nam
 
 while($rr=mysqli_fetch_array($row)){
     ?>
-                                <li><a href="single-post.html"><?php echo $rr['article_title']; ?></a></li>
+                                <li><a href="single-post.php"><?php echo $rr['article_title']; ?></a></li>
                             <?php }?>
                                 
                             </ul>
@@ -474,7 +474,7 @@ $row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_nam
         INNER JOIN comment AS d
       ON o.article_id=d.article_id
       INNER JOIN editor AS e
-      ON e.email=o.editor_id LIMIT 1");
+      ON e.email=o.editor_id LIMIT 4");
 
 
 
