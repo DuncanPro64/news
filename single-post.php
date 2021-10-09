@@ -557,7 +557,7 @@ include('connection.php');
 
                             <!-- Single Popular Blog -->
                            <?php
-            $row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
                     INNER JOIN category AS c
                     ON o.category_id=c.cat_id 
                     INNER JOIN comment AS d
@@ -624,7 +624,7 @@ include('connection.php');
                                     <a href="#"><?php echo $rr['content'] ?><br><span>on</span> <?php echo  $rr['date'] ?></a>
                                     <p><?php $rr['date'] ?></p>
                                 </div>
-                            </div>';
+                            </div>
                            <?php }?>
 
                             <!-- Single Comments -->
