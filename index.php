@@ -1,10 +1,7 @@
     <?php
-// <<<<<<< HEAD
+
     include('connection.php');
-        $db = mysqli_connect('localhost', 'root', '', 'vibes');
-// =======
-        // $db = mysqli_connect('localhost', 'root', '@Dun0714757251', 'vibes');
-// >>>>>>> 869b587180918564b09d7eb428d309a29a165317
+
           $email="";
           $name="";
           $category="";
