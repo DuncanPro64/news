@@ -14,15 +14,15 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color: white;">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../index.html"><b><span style="color: red;">Campus</span></b>vibes.</a>
+    <a href="../index.php"><img src="../img/core-img/logo2.jpg" alt="" height="40%"  width="40%"></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">SIGN IN </p>
+      <p class="login-box-msg" style="color:black;font-weight: bold;">Sign in<br><small style="color:black;">Stay updated on campus matters</small ></p>
 
       <form action=" log_process.php" method="post">
         <div class="input-group mb-3">
