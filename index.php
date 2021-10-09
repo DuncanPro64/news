@@ -261,7 +261,7 @@ while($rr=mysqli_fetch_array($row)){
                             <input type="email" name="email" placeholder="Email">
                         <div class="form-group">
                             <!-- <label>University</label> -->
-                  <select class="form-control select2" style="width: 100%;" name="campus">
+                  <select class="form-control select2" style="width: 100%;" name="category">
                     <option selected="selected">Select Category</option>';
 
                         <option value="politics">politics</option>
