@@ -51,8 +51,8 @@
                     ?>
                                 <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?></a></li>
                             <?php }?>
-                                <li><a href="single-post.html">Computer scients have finally solved the long standing travelling sales man problem</a></li>
-                                <li><a href="single-post.html">Microsoft looses billions of money after computer hackers take  down machines and servers operating on windows ten </a></li>
+                                <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?></a></li>
+                                <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?> </a></li>
                             </ul>
                         </div>
                     </div>
