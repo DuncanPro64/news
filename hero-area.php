@@ -10,7 +10,7 @@
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
                                 <?php
-            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
                     INNER JOIN category AS c
                     ON o.category_id=c.cat_id 
                     INNER JOIN comment AS d
@@ -22,7 +22,7 @@
 
                         while($rr=mysqli_fetch_array($row)){
                             ?>
-                                <li><a href="single-post.html"><?php echo $rr['article_title']; ?></a></li>
+                                <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?></a></li>
                             <?php }?>
                                 
                             </ul>
@@ -37,7 +37,7 @@
                         <div id="internationalTicker" class="ticker">
                             <ul>
                                                             <?php
-                $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+                $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
                         INNER JOIN category AS c
                         ON o.category_id=c.cat_id 
                         INNER JOIN comment AS d

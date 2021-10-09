@@ -57,28 +57,33 @@ include('connection.php');
 
                     <?php 
                         $category_id = $_GET['category'];
-                        $query = "SELECT * FROM article as a INNER JOIN category as c ON a.category_id = c.cat_id WHERE cat_id=$category_id LIMIT 2";
+                        $query = "SELECT * FROM article as a INNER JOIN editor INNER JOIN comment INNER JOIN category as c ON a.category_id = c.cat_id WHERE cat_id=$category_id LIMIT 4";
                         // $query = "SELECT * FROM category as c INNER JOIN article as a ON a.category_id = $category_id ";
+
                         $row = mysqli_query($con,$query) or die(mysqli_error($con));
 
                         while($data=mysqli_fetch_array($row)){
+                            $excerp = substr($data['content'],0,100);
+                            $article_id = $data['article_id'];   
+                            $comments = mysqli_query($con,"SELECT COUNT(*) FROM comment WHERE article_id=$article_id") or die(mysqli_error($con));
+                            $row1 = mysqli_fetch_array($comments);
                             echo'<!-- Single Featured Post -->
                         <div class="single-blog-post featured-post mb-30">
                             <div class="post-thumb">
                                 <a href="#"><img src="img/bg-img/25.jpg" alt=""></a>
                             </div>
                             <div class="post-data">
-                                <a href="#" class="post-catagory">'.$data['cat_name'].'</a>
-                                <a href="#" class="post-title">
+                                <a href="single-post.php?article_id='.$data['article_id'].'" class="post-catagory">'.$data['cat_name'].'</a>
+                                <a href="single-post.php?article_id='.$data['article_id'].'" class="post-title">
                                     <h6>'.$data['article_title'].'</h6>
                                 </a>
                                 <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Christinne Williams</a></p>
-                                    <p class="post-excerp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lectus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem. </p>
+                                    <p class="post-author">By <a href="#">'.$data['f_name'].'</a></p>
+                                    <p class="post-excerp">'.$excerp.' </p>
                                     <!-- Post Like & Post Comment -->
                                     <div class="d-flex align-items-center">
-                                        <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>'.$data['likes'].'</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
+                                        <a href="" class="post-like"><img src="img/core-img/like.png" alt=""> <span>'.$data['likes'].'</span></a>
+                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>'.$row1[0].'</span></a>
                                     </div>
                                 </div>
                             </div>
