@@ -99,7 +99,7 @@ while($rr=mysqli_fetch_array($row)){
                         <div class="col-12 col-lg-5">
                             <!-- Single Featured Post -->
                             <?php
-$select = mysqli_query($db, "SELECT c.cat_name, c.cat_id, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+$select = mysqli_query($con, "SELECT c.cat_name, c.cat_id, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d

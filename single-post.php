@@ -135,14 +135,9 @@ include('connection.php');
                         }
                         ?>
                        
-                            
-
                             <!-- Single Post -->
                    
                         </div>
-
-
-
                         <!-- Comment Area Start -->
                         <div class="comment_area clearfix">
                             <h5 class="title">3 Comments</h5>
