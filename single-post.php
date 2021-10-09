@@ -1,6 +1,6 @@
 
 <?php
- $con = mysqli_connect('localhost', 'root', '', 'vibes');
+ $con = mysqli_connect('localhost', 'root', '@Dun0714757251', 'vibes');
 
 ?>
 
@@ -299,7 +299,7 @@
                             </div>
                             <div class="author-info">
                                 <a href="#" class="author-name">'.$row2['f_name'].' '.''.$row2['l_name'].' <span>The Author</span></a>
-                                <p>'.$row2['about'].'</p>
+                                <p>'.$row2['content'].'</p>
                             </div>
                         </div>
                     

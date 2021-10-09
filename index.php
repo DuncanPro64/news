@@ -1,5 +1,5 @@
     <?php
-        $db = mysqli_connect('localhost', 'root', '', 'vibes');
+        $db = mysqli_connect('localhost', 'root', '@Dun0714757251', 'vibes');
           $email="";
           $name="";
           $category="";
@@ -72,7 +72,7 @@
                             <div class="login-search-area d-flex align-items-center">
                                 <!-- Login -->
                                 <div class="login d-flex">
-                                    <a href="admin/login.html">Login</a>
+                                    <a href="admin/login.php">Login</a>
                                     <a href="admin/register.html">Register as an Editor</a>
                                 </div>
                                 <!-- Search Form -->
@@ -136,6 +136,16 @@
                                             ?>
                                         </ul>
                                     </li>
+                                    
+                                    <!-- <li><a href="#">Breaking News</a></li> -->
+                                    <li><a href="single-post.html">Campus Gossip</a></li>
+                                    <li><a href="single-post.html">Politics</a></li>
+                                    <li><a href="single-post.html">Fashion</a></li>
+                                    <li><a href="single-post.html">Entertainment</a></li>
+                                    <li><a href="single-post.html">Sports</a></li>
+                                    <li><a href="single-post.html">Business</a></li>
+                                    <li><a href="single-post.html">Science & Technology</a></li>
+                                    <li><a href="single-post.html">Health & Lifestyle</a></li>
                                     <li><a href="#">More</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
@@ -195,15 +205,6 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <!-- <li><a href="#">Breaking News</a></li> -->
-                                    <li><a href="single-post.html">Campus Gossip</a></li>
-                                    <li><a href="single-post.html">Politics</a></li>
-                                    <li><a href="single-post.html">Fashion</a></li>
-                                    <li><a href="single-post.html">Entertainment</a></li>
-                                    <li><a href="single-post.html">Sports</a></li>
-                                    <li><a href="single-post.html">Business</a></li>
-                                    <li><a href="single-post.html">Science & Technology</a></li>
-                                    <li><a href="single-post.html">Health & Lifestyle</a></li>
                                     <!-- <li><a href="#">Travel</a></li> -->
                                     <!-- <li><a href="contact.html">Contact</a></li> -->
                                 </ul>
