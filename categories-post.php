@@ -57,7 +57,8 @@ include('connection.php');
 
                     <?php 
                         $category_id = $_GET['category'];
-                        $query = "SELECT * FROM article as a INNER JOIN category as c ON a.category_id = category_id LIMIT 2";
+                        $query = "SELECT * FROM article as a INNER JOIN category as c ON a.category_id = c.cat_id WHERE cat_id=$category_id LIMIT 2";
+                        // $query = "SELECT * FROM category as c INNER JOIN article as a ON a.category_id = $category_id ";
                         $row = mysqli_query($con,$query) or die(mysqli_error($con));
 
                         while($data=mysqli_fetch_array($row)){
@@ -87,71 +88,6 @@ include('connection.php');
 
                         ?>
 
-                        <!-- Single Featured Post -->
-                        <div class="single-blog-post featured-post mb-30">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/26.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>Pompeo moves to reassure skeptical Dems in bid to be US diplomat</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Christinne Williams</a></p>
-                                    <p class="post-excerp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lectus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem. </p>
-                                    <!-- Post Like & Post Comment -->
-                                    <div class="d-flex align-items-center">
-                                        <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Featured Post -->
-                        <div class="single-blog-post featured-post mb-30">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/27.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>Most investors think 2018 is the peak year for stocks</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Christinne Williams</a></p>
-                                    <p class="post-excerp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lectus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem. </p>
-                                    <!-- Post Like & Post Comment -->
-                                    <div class="d-flex align-items-center">
-                                        <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Featured Post -->
-                        <div class="single-blog-post featured-post mb-30">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/28.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>Facebook is offering facial recognition again in Europe</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Christinne Williams</a></p>
-                                    <p class="post-excerp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lectus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem. </p>
-                                    <!-- Post Like & Post Comment -->
-                                    <div class="d-flex align-items-center">
-                                        <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
 

@@ -85,7 +85,7 @@
                                             while ($row = mysqli_fetch_assoc($result)) {
                                     echo'   
 
-                                              <li><a href="single-post.php?category='.htmlentities($row['cat_id']).'">'.$row['cat_name'].'</a></li>';
+                                              <li><a href="categories-post.php?category='.htmlentities($row['cat_id']).'">'.$row['cat_name'].'</a></li>';
                                                  }
                                     ?>
                                     <li><a href="#">More</a>
