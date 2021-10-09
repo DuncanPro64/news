@@ -79,16 +79,15 @@
                                             ?>
                                         </ul>
                                     </li>
-                                    
-                                    <!-- <li><a href="#">Breaking News</a></li> -->
-                                    <li><a href="single-post.html">Campus Gossip</a></li>
-                                    <li><a href="single-post.html">Politics</a></li>
-                                    <li><a href="single-post.html">Fashion</a></li>
-                                    <li><a href="single-post.html">Entertainment</a></li>
-                                    <li><a href="single-post.html">Sports</a></li>
-                                    <li><a href="single-post.html">Business</a></li>
-                                    <li><a href="single-post.html">Science & Technology</a></li>
-                                    <li><a href="single-post.html">Health & Lifestyle</a></li>
+                                    <?php
+                                    $query = 'SELECT * FROM category';
+                                            $result = mysqli_query($con,$query)or die(mysqli_error($con));
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                    echo'   
+
+                                              <li><a href="single-post.php?category='.htmlentities($row['cat_id']).'">'.$row['cat_name'].'</a></li>';
+                                                 }
+                                    ?>
                                     <li><a href="#">More</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
