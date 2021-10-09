@@ -3,6 +3,13 @@
 
 include('connection.php');
 
+
+//getting userid of the data from url
+  
+$article_id = $_GET['article_id'];
+//$id = $_REQUEST['article_id'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +54,7 @@ include('connection.php');
 
                                 $editor_id = $row['editor_id'];
 
-                                $query2 = "SELECT * FROM article INNER JOIN editor ON '$editor_id'=editor.email";
+                                $query2 = "SELECT * FROM article, campus INNER JOIN editor ON '$editor_id'=editor.email where article_id=$article_id";
                                 $result2 = mysqli_query($con,$query2) or die(mysqli_error($con));
                                 $row2 = mysqli_fetch_assoc($result2) or die(mysqli_error($con));
 
@@ -80,11 +87,13 @@ include('connection.php');
                         echo'<!-- About Author -->
                         <div class="blog-post-author d-flex">
                             <div class="author-thumbnail">
+
                                 <img src="img/bg-img/32.jpg" alt="">
                             </div>
                             <div class="author-info">
-                                <a href="#" class="author-name">'.$row2['f_name'].' '.''.$row2['l_name'].' <span>The Author</span></a>
-                                <p>'.$row2['content'].'</p>
+                                <a href="#" class="author-name"> '.$row2['f_name'].' '.''.$row2['l_name'].'<img src="https://img.icons8.com/fluency/15/000000/verified-badge.png"/> </a>
+                                <p style="color: blue;">'.$row2['email'].'</p><br>
+                                <p>'.$row2['campus_name'].'</p>
                             </div>
                         </div>
                     
@@ -208,7 +217,7 @@ include('connection.php');
   
 $select = mysqli_query($con, "SELECT c.cat_name, c.cat_id, o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM category as c
         INNER JOIN article AS o
-        ON c.cat_id=o.category_id LIMIT 6 ");
+        ON c.cat_id=o.category_id LIMIT 6  ");
 
 
 
@@ -240,13 +249,13 @@ while($rr=mysqli_fetch_array($select)){
 
                             <!-- Single Popular Blog -->
                            <?php
-            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count, o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
                     INNER JOIN category AS c
                     ON o.category_id=c.cat_id 
                     INNER JOIN comment AS d
                   ON o.article_id=d.article_id
                   INNER JOIN editor AS e
-                  ON e.email=o.editor_id LIMIT 6");
+                  ON e.email=o.editor_id  LIMIT 6");
 
 
             $i = 1;
