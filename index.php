@@ -1,4 +1,5 @@
     <?php
+    include('connection.php');
         $db = mysqli_connect('localhost', 'root', '', 'vibes');
           $email="";
           $name="";
@@ -123,7 +124,7 @@
                                         <ul class="dropdown">';
                                             
                                             $query = 'SELECT * FROM category';
-                                            $result = mysqli_query($db,$query);
+                                            $result = mysqli_query($db,$query)or die(mysqli_error($con));
                                             while ($row = mysqli_fetch_assoc($result)) {
                                            
                                               echo'   
@@ -229,18 +230,18 @@
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
                                 <?php
-$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
-        INNER JOIN category AS c
-        ON o.category_id=c.cat_id 
-        INNER JOIN comment AS d
-      ON o.article_id=d.article_id
-      INNER JOIN editor AS e
-      ON e.email=o.editor_id ");
+            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+                    INNER JOIN category AS c
+                    ON o.category_id=c.cat_id 
+                    INNER JOIN comment AS d
+                  ON o.article_id=d.article_id
+                  INNER JOIN editor AS e
+                  ON e.email=o.editor_id ") or die(mysqli_error($con));
 
 
 
-while($rr=mysqli_fetch_array($row)){
-    ?>
+                        while($rr=mysqli_fetch_array($row)){
+                            ?>
                                 <li><a href="single-post.html"><?php echo $rr['article_title']; ?></a></li>
                             <?php }?>
                                 
@@ -256,18 +257,18 @@ while($rr=mysqli_fetch_array($row)){
                         <div id="internationalTicker" class="ticker">
                             <ul>
                                                             <?php
-$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
-        INNER JOIN category AS c
-        ON o.category_id=c.cat_id 
-        INNER JOIN comment AS d
-      ON o.article_id=d.article_id
-      INNER JOIN editor AS e
-      ON e.email=o.editor_id ");
+                $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+                        INNER JOIN category AS c
+                        ON o.category_id=c.cat_id 
+                        INNER JOIN comment AS d
+                      ON o.article_id=d.article_id
+                      INNER JOIN editor AS e
+                      ON e.email=o.editor_id ") or die(mysqli_error($con));
 
 
 
-while($rr=mysqli_fetch_array($row)){
-    ?>
+                while($rr=mysqli_fetch_array($row)){
+                    ?>
                                 <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?></a></li>
                             <?php }?>
                                 <li><a href="single-post.html">Computer scients have finally solved the long standing travelling sales man problem</a></li>
@@ -298,13 +299,13 @@ while($rr=mysqli_fetch_array($row)){
 
                         <div class="col-12 col-lg-7">
                                                         <?php
-$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
-        INNER JOIN category AS c
-        ON o.category_id=c.cat_id 
-        INNER JOIN comment AS d
-      ON o.article_id=d.article_id
-      INNER JOIN editor AS e
-      ON e.email=o.editor_id LIMIT 1");
+                $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+                        INNER JOIN category AS c
+                        ON o.category_id=c.cat_id 
+                        INNER JOIN comment AS d
+                      ON o.article_id=d.article_id
+                      INNER JOIN editor AS e
+                      ON e.email=o.editor_id LIMIT 1") or die(mysqli_error($con));
 
 
 
@@ -341,7 +342,7 @@ $select = mysqli_query($db, "SELECT c.cat_name, c.cat_id, d.count,o.content, o.a
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d
-      ON o.article_id=d.article_id LIMIT 2");
+      ON o.article_id=d.article_id LIMIT 2") or die(mysqli_error($con));
 
 
 
@@ -400,53 +401,7 @@ while($rr=mysqli_fetch_array($select)){
                         </div>
                     </div>
 <?php } ?>
-                    <!-- Single Featured Post -->
-                    <!--div class="single-blog-post small-featured-post d-flex">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/22.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="single-post.html" class="post-catagory">Finance</a>
-                            <div class="post-meta">
-                                <a href="single-post.html" class="post-title">
-                                    <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
-                                </a>
-                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                            </div>
-                        </div>
-                    </div>-->
-
-                    <!-- Single Featured Post -->
-                    <!--div class="single-blog-post small-featured-post d-flex">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="single-post.html" class="post-catagory">Travel</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-title">
-                                    <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                </a>
-                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                            </div>
-                        </div>
-                    </div>-->
-
-                    <!-- Single Featured Post -->
-                    <!--div class="single-blog-post small-featured-post d-flex">
-                        <div class="post-thumb">
-                            <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-catagory">Politics</a>
-                            <div class="post-meta">
-                                <a href="#" class="post-title">
-                                    <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
-                                </a>
-                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                            </div>
-                        </div>
-                    </div>-->
+           
                 </div>
             </div>
         </div>
@@ -567,29 +522,29 @@ while($rr=mysqli_fetch_array($row)){
                         <h3>4 Most Popular News</h3>
 
                         <!-- Single Popular Blog -->
-                                                                                   <?php
-$row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
-        INNER JOIN category AS c
-        ON o.category_id=c.cat_id 
-        INNER JOIN comment AS d
-      ON o.article_id=d.article_id
-      INNER JOIN editor AS e
-      ON e.email=o.editor_id LIMIT 6");
+                                                                                               <?php
+            $row = mysqli_query($db, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+                    INNER JOIN category AS c
+                    ON o.category_id=c.cat_id 
+                    INNER JOIN comment AS d
+                  ON o.article_id=d.article_id
+                  INNER JOIN editor AS e
+                  ON e.email=o.editor_id LIMIT 6");
 
 
 
-while($rr=mysqli_fetch_array($row)){
-    ?>
-                       
+            while($rr=mysqli_fetch_array($row)){
+                ?>
+                                   
 
-                        <!-- Single Popular Blog -->
-                        <div class="single-popular-post">
-                            <a href="#">
-                                <h6><span>2.</span> <?php echo $rr['article_title']; ?></h6>
-                            </a>
-                            <p><?php echo date('F d ,Y', strtotime($rr['date'])); ?></p>
-                        </div>
-<?php } ?>
+                                    <!-- Single Popular Blog -->
+                                    <div class="single-popular-post">
+                                        <a href="#">
+                                            <h6><span>2.</span> <?php echo $rr['article_title']; ?></h6>
+                                        </a>
+                                        <p><?php echo date('F d ,Y', strtotime($rr['date'])); ?></p>
+                                    </div>
+            <?php } ?>
                         <!-- Single Popular Blog -->
                         
 
