@@ -50,9 +50,10 @@
                 while($rr=mysqli_fetch_array($row)){
                     ?>
                                 <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?></a></li>
-                            <?php }?>
+                            
                                 <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?></a></li>
                                 <li><a href="single-post.php?article_id=<?php echo $rr['article_id']; ?>"><?php echo $rr['article_title']; ?> </a></li>
+                                <?php }?>
                             </ul>
                         </div>
                     </div>
