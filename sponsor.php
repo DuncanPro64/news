@@ -27,18 +27,19 @@ include('connection.php');
 
             <div class="row">
                 <div class="col-12">
-                    <h2>A young and professional team</h2>
+                    <h2> Welcome and here we recognize our Sponsors</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 col-lg-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lec tus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur, purus imperdiet volutpat tincidunt, eros sem mollis quam, ut placerat urna neque at massa. Proin vitae pulvinar justo. Donec vel placerat enim, at ultricies risus.</p>
+                    <p><span style="color: #ee002d; font-weight: bold; font-size: 20px;">“</span>If nature has made you for a giver, your hands are born open, and so is your heart; and though there may be times when your hands are empty, your heart is always full, and you can give things out of that—warm things, kind things, sweet things—help and comfort and laughter—and sometimes gay, kind laughter is the best help of all.<span style="color: #ee002d; font-size:22px;">”</span>
+―                  <span style="color: #ee002d; font-size:12px;">Frances Hodgson Burnett, A Little Princess</span>     </p>
+                    <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our beloved sponsors. We thank the for your their kindness and willingness to give</p>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <p>Donec gravida non metus blandit facilisis. Cras tincidunt, lorem aliquam molestie eleifend, libero dui volutpat dui, nec sodales massa libero ut metus. Mauris pretium elit ut dapibus consequat. Nam ut lorem nec sem dignissim gravida. Duis fringilla.</p>
-                    <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellentesque lectus et accumsan aliquam. Fusce lobortis cursus quam, id mattis sapien. Aliquam erat volutpat. Aliquam placerat, est quis sagittis tincidunt, ipsum eros posuere mi, ut finibus quam sem eget ex.</p>
+                    <p style="margin-left: 20%;margin-top: 5%;"><a href="#"><img src="img/core-img/contribution.png" height="30%" width="30%" alt=""></a>.</p>
+                    
                 </div>
             </div>
 
