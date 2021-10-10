@@ -57,7 +57,7 @@
 
                         <div class="col-12 col-lg-7">
                                                         <?php
-                $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+                $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
                         INNER JOIN category AS c
                         ON o.category_id=c.cat_id 
                         INNER JOIN comment AS d
@@ -68,7 +68,13 @@
 
 
 while($rr=mysqli_fetch_array($row)){
+    $article_id = $rr['article_id'];
+    $query = "SELECT COUNT(*) FROM comment WHERE article_id = $article_id";
+    $count = mysqli_query($con,$query) or die(mysqli_error($con));
+    $count = mysqli_fetch_array($count);
+    $count = $count[0];
     ?>
+
                             <div class="single-blog-post featured-post">
                                 <div class="post-thumb">
                                     <a href="#"><img src="img/bg-img/16.jpg" alt=""></a>
@@ -84,7 +90,7 @@ while($rr=mysqli_fetch_array($row)){
                                         <!-- Post Like & Post Comment -->
                                         <div class="d-flex align-items-center">
                                             <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span><?php echo $rr['likes']; ?></span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $rr['count']; ?></span></a>
+                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $count; ?></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +102,7 @@ while($rr=mysqli_fetch_array($row)){
                         <div class="col-12 col-lg-5">
                             <!-- Single Featured Post -->
                             <?php
-$select = mysqli_query($con, "SELECT c.cat_name, c.cat_id, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+$select = mysqli_query($con, "SELECT c.cat_name, c.cat_id,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d
@@ -105,6 +111,12 @@ $select = mysqli_query($con, "SELECT c.cat_name, c.cat_id, d.count,o.content, o.
 
 
 while($rr=mysqli_fetch_array($select)){
+    
+    $article_id = $rr['article_id'];
+    $query = "SELECT COUNT(*) FROM comment WHERE article_id = $article_id";
+    $count = mysqli_query($con,$query) or die(mysqli_error($con));
+    $count = mysqli_fetch_array($count);
+    $count = $count[0];
     ?>
                             <div class="single-blog-post featured-post-2">
                                 <div class="post-thumb">
@@ -119,7 +131,7 @@ while($rr=mysqli_fetch_array($select)){
                                         <!-- Post Like & Post Comment -->
                                         <div class="d-flex align-items-center">
                                             <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span><?php echo $rr['likes']; ?></span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $rr['count']; ?></span></a>
+                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $count ?></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -180,7 +192,7 @@ while($rr=mysqli_fetch_array($select)){
                         <!-- Single Post -->
                         <!-- <div class="col-12 col-md-6"> -->
         <?php
-$row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+$row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d
@@ -191,6 +203,11 @@ $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_na
 
 
 while($rr=mysqli_fetch_array($row)){
+    $article_id = $rr['article_id'];
+    $query = "SELECT COUNT(*) FROM comment WHERE article_id = $article_id";
+    $count = mysqli_query($con,$query) or die(mysqli_error($con));
+    $count = mysqli_fetch_array($count);
+    $count = $count[0];
     
         echo'<div class="col-12 col-md-6">
         <div class="single-blog-post style-3">
@@ -204,7 +221,7 @@ while($rr=mysqli_fetch_array($row)){
                 </a>
                 <div class="post-meta d-flex align-items-center">
                     <a href="single-post.php?article_id='.$rr['article_id'].'" class="post-like"><img src="img/core-img/like.png" alt=""> <span>'.$rr['likes'].'</span></a>
-                    <a href="single-post.php?article_id='.$rr['article_id'].'" class="post-comment"><img src="img/core-img/chat.png" alt="like button" name="like_btn"> <span>'.$rr['count'].'</span></a>
+                    <a href="single-post.php?article_id='.$rr['article_id'].'" class="post-comment"><img src="img/core-img/chat.png" alt="like button" name="like_btn"> <span>'.$count.'</span></a>
                 </div>
             </div>
         </div>
@@ -225,8 +242,8 @@ while($rr=mysqli_fetch_array($row)){
                         <h3>4 Most Popular News</h3>
 
                         <!-- Single Popular Blog -->
-                                                                                               <?php
-            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+            <?php
+            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
                     INNER JOIN category AS c
                     ON o.category_id=c.cat_id 
                     INNER JOIN comment AS d
@@ -335,7 +352,7 @@ while($rr=mysqli_fetch_array($row)){
                         <!-- <div class="col-12 col-lg-4"> -->
 
 <?php
-$row2 = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+$row2 = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d
@@ -378,7 +395,7 @@ while($rr=mysqli_fetch_array($row2)){
 
                     <!-- Single Post -->
                     <?php
-$row2 = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
+$row2 = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name,o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
         INNER JOIN category AS c
         ON o.category_id=c.cat_id 
         INNER JOIN comment AS d
