@@ -166,7 +166,7 @@ while($rr=mysqli_fetch_array($select)){
                                 <a href="#" class="post-title">
                                     <h6><?php echo $rr['article_title']; ?></h6>
                                 </a>
-                                <p class="post-date"><span><?php echo date('g:ia', strtotime($rr['timestamp']));?></span> | <span><?php echo date('F d Y', strtotime($rr['date'])); ?></span></p>
+                                <p class="post-date"><span><?php echo date('g:ia', strtotime($rr['time_posted']));?></span> | <span><?php echo date('F d Y', strtotime($rr['date'])); ?></span></p>
                             </div>
                         </div>
                     </div>
