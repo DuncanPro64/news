@@ -82,7 +82,7 @@ include('connection.php');
                     <div class="single-cool-fact d-flex align-items-center">
                         <h3><span class="counter">17</span></h3>
                         <div class="cf-text">
-                            <h6>Beneficiary</h6>
+                            <h6>Beneficiaries</h6>
                             <span>We are geared toward nurturing talents and helping needy students</span>
                         </div>
                     </div>
