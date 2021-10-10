@@ -214,39 +214,10 @@ include('connection.php');
 
                         <!-- Popular News Widget -->
                         <div class="popular-news-widget mb-50">
-                            <h3>4 Most Popular News</h3>
+                            <h3>Most Popular News</h3>
 
                             <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>1.</span> Amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>2.</span> Consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>3.</span> Adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo.</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
-
-                            <!-- Single Popular Blog -->
-                            <div class="single-popular-post">
-                                <a href="#">
-                                    <h6><span>4.</span> Eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
-                                </a>
-                                <p>April 14, 2018</p>
-                            </div>
+                            <?php include('popular-news-section.php');?>
                         </div>
 
                         <!-- Newsletter Widget -->
@@ -265,48 +236,9 @@ include('connection.php');
                             <h3>Latest Comments</h3>
 
                             <!-- Single Comments -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/29.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
+                            <?php include('latest-comment-section.php'); ?>
 
-                            <!-- Single Comments -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/30.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Comments -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/31.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Comments -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/32.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#">Jamie Smith <span>on</span> Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
+                        
                         </div>
                     </div>
                 </div>

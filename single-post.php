@@ -215,7 +215,7 @@ $article_id = $_GET['article_id'];
                             <!-- Single Featured Post -->
                             <?php
   
-$select = mysqli_query($con, "SELECT c.cat_name, c.cat_id, o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM category as c
+$select = mysqli_query($con, "SELECT c.cat_name, c.cat_id, o.content, o.article_title,o.date,o.time_posted,o.likes,o.category_id,o.article_id FROM category as c
         INNER JOIN article AS o
         ON c.cat_id=o.category_id LIMIT 6  ");
 
@@ -233,7 +233,7 @@ while($rr=mysqli_fetch_array($select)){
                                 <a href="#" class="post-title">
                                     <h6><?php echo $rr['article_title']; ?></h6>
                                 </a>
-                                <p class="post-date"><span><?php echo date('g:ia', strtotime($rr['timestamp']));?></span> | <span><?php echo date('F d Y', strtotime($rr['date'])); ?></span></p>
+                                <p class="post-date"><span><?php echo date('g:ia', strtotime($rr['time_posted']));?></span> | <span><?php echo date('F d Y', strtotime($rr['date'])); ?></span></p>
                             </div>
                         </div>
                     </div>
@@ -248,31 +248,7 @@ while($rr=mysqli_fetch_array($select)){
 
 
                             <!-- Single Popular Blog -->
-                           <?php
-            $row = mysqli_query($con, "SELECT c.cat_name, c.cat_id, e.f_name,e.email, e.l_name, d.count, o.content, o.article_title,o.date,o.timestamp,o.likes,o.category_id,o.article_id FROM article as o
-                    INNER JOIN category AS c
-                    ON o.category_id=c.cat_id 
-                    INNER JOIN comment AS d
-                  ON o.article_id=d.article_id
-                  INNER JOIN editor AS e
-                  ON e.email=o.editor_id  LIMIT 6");
-
-
-            $i = 1;
-
-            while($rr=mysqli_fetch_array($row)){
-                ?>
-                                   
-
-                                    <!-- Single Popular Blog -->
-                                    <div class="single-popular-post">
-                                        <a href="#">
-                                            <h6><span><?php echo $i ?>.</span> <?php echo $rr['article_title']; ?></h6>
-                                        </a>
-                                        <p><?php echo date('F d ,Y', strtotime($rr['date'])); ?></p>
-                                    </div>
-                                    <?php $i++; ?>
-            <?php } ?>
+                          <?php include('popular-news-section.php');?>
 
 
                             <!-- Single Popular Blog -->
@@ -297,24 +273,7 @@ while($rr=mysqli_fetch_array($select)){
 
                             <!-- Single Comments -->
 
-                            <?php
-                             $query6 = "SELECT * FROM comment LIMIT 4";
-                            $row = mysqli_query($con,$query6) or die(mysqli_error($con));
-                            
-                            while($rr=mysqli_fetch_array($row)){
-   
-                                ?>
-                            
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail mr-15">
-                                    <img src="img/bg-img/29.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#"><?php echo $rr['content'] ?><br><span>on</span> <?php echo date('F d ,Y', strtotime($rr['date'])); ?></a>
-                                    <p><?php echo date('F d ,Y', strtotime($rr['date'])); ?></p>
-                                </div>
-                            </div>
-                           <?php }?>
+                            <?php include('latest-comment-section.php'); ?>
 
                             <!-- Single Comments -->
                 
