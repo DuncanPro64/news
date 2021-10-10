@@ -113,37 +113,30 @@
                                                 <li><a href="#">Donate</a></li>
                                             </ul>
                                             <div class="single-mega cn-col-4">
-                                                <!-- Single Featured Post -->
-                                                <div class="single-blog-post small-featured-post d-flex">
-                                                    <div class="post-thumb">
-                                                        <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="post-data">
-                                                        <a href="single-post.html" class="post-catagory">Travel</a>
-                                                        <div class="post-meta">
-                                                            <a href="#" class="post-title">
-                                                                <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                                            </a>
-                                                            <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <?php
+                                                $query = "SELECT * FROM article as a INNER JOIN category as c ON a.category_id=c.cat_id 
+                                                ORDER BY likes DESC,time_posted DESC LIMIT 2";
+                                                $result = mysqli_query($con,$query) or die(mysqli_error($con));
+                                                while($row =mysqli_fetch_assoc($result)){
+                                                       $title = substr($row['article_title'],0,50);
+                                                       echo' <!-- Single Featured Post -->
+                                                        <div class="single-blog-post small-featured-post d-flex">
+                                                            <div class="post-thumb">
+                                                                <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
+                                                            </div>
+                                                            <div class="post-data">
+                                                                <a href="single-post.html" class="post-catagory">'.$row['cat_name'].'</a>
+                                                                <div class="post-meta">
+                                                                    <a href="#" class="post-title">
+                                                                        <h6>'.$title.'.</h6>
+                                                                    </a>
+                                                                    <p class="post-date"><span> '.date('g:ia', strtotime($row['time_posted'])).'</span> | <span>'.date('F d Y', strtotime($row['date'])).'</span></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>';
+                                                        }
+                                                 ?>
 
-                                                <!-- Single Featured Post -->
-                                                <div class="single-blog-post small-featured-post d-flex">
-                                                    <div class="post-thumb">
-                                                        <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="post-data">
-                                                        <a href="single-post.html" class="post-catagory">Politics</a>
-                                                        <div class="post-meta">
-                                                            <a href="#" class="post-title">
-                                                                <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
-                                                            </a>
-                                                            <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </li>
