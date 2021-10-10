@@ -108,7 +108,7 @@
                                                <ul class="single-mega cn-col-4">
                                                 <li class="title"  style="font-weight: bold;">DONATIONS</li>
                                                 <li><a href="#">Learn How</a></li>
-                                                <li><a href="#"> Sponsors</a></li>
+                                                <li><a href="sponsor.php"> Sponsors</a></li>
                                                 <li><a href="contact.html"> Projects</a></li>
                                                 <li><a href="#">Donate</a></li>
                                             </ul>
