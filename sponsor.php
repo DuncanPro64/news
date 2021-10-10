@@ -38,8 +38,8 @@ include('connection.php');
                     <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our beloved sponsors. We thank the for your their kindness and willingness to give</p>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <p style="margin-left: 20%;margin-top: 5%;"><a href="#"><img src="img/core-img/contribution.png" height="30%" width="30%" alt=""></a>.</p>
-                    
+                    <p style="margin-left: 20%;margin-top: 1%;"><a href="#"><img src="img/core-img/contribution.png" height="30%" width="30%" alt=""></a>.</p>
+                    <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our beloved sponsors. We thank the for your their kindness and willingness to give</p>
                 </div>
             </div>
 
