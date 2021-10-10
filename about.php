@@ -8,18 +8,12 @@ include('connection.php');
 <html lang="en">
 
 <head>
-
-        <?php include('header.php'); ?>
+<?php include('header.php'); ?>
 
 </head>
 
-
-
 <body>
-   
-<?php include('hero-area.php'); ?>
-    <!-- ##### Hero Area Start ##### -->
-    
+   <?php include('hero-area.php'); ?>
 
     <!-- ##### About Area Start ##### -->
     <section class="about-area">
@@ -27,19 +21,18 @@ include('connection.php');
 
             <div class="row">
                 <div class="col-12">
-                    <h2> Welcome and here we recognize our Sponsors</h2>
+                    <h2>A young and professional team</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 col-lg-6">
-                    <p><span style="color: #ee002d; font-weight: bold; font-size: 20px;">“</span>If nature has made you for a giver, your hands are born open, and so is your heart; and though there may be times when your hands are empty, your heart is always full, and you can give things out of that—warm things, kind things, sweet things—help and comfort and laughter—and sometimes gay, kind laughter is the best help of all.<span style="color: #ee002d; font-size:22px;">”</span>
-―                  <span style="color: #ee002d; font-size:12px;">Frances Hodgson Burnett, A Little Princess</span>     </p>
-                    <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our beloved sponsors. We thank the for your their kindness and willingness to give</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lec tus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur, purus imperdiet volutpat tincidunt, eros sem mollis quam, ut placerat urna neque at massa. Proin vitae pulvinar justo. Donec vel placerat enim, at ultricies risus.</p>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <p style="margin-left: 20%;margin-top: 1%;"><a href="#"><img src="img/core-img/contribution.png" height="30%" width="30%" alt=""></a>.</p>
-                    <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our beloved sponsors. We thank the for your their kindness and willingness to give</p>
+                    <p>Donec gravida non metus blandit facilisis. Cras tincidunt, lorem aliquam molestie eleifend, libero dui volutpat dui, nec sodales massa libero ut metus. Mauris pretium elit ut dapibus consequat. Nam ut lorem nec sem dignissim gravida. Duis fringilla.</p>
+                    <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellentesque lectus et accumsan aliquam. Fusce lobortis cursus quam, id mattis sapien. Aliquam erat volutpat. Aliquam placerat, est quis sagittis tincidunt, ipsum eros posuere mi, ut finibus quam sem eget ex.</p>
                 </div>
             </div>
 
@@ -49,8 +42,8 @@ include('connection.php');
                     <div class="single-cool-fact d-flex align-items-center">
                         <h3><span class="counter">12</span>K</h3>
                         <div class="cf-text">
-                            <h6>Cash Donated</h6>
-                            <span>We use this money to help needy students and run student projects.</span>
+                            <h6>News Article</h6>
+                            <span>Donec turpis erat, scelerisq</span>
                         </div>
                     </div>
                 </div>
@@ -60,8 +53,8 @@ include('connection.php');
                     <div class="single-cool-fact d-flex align-items-center">
                         <h3><span class="counter">45</span></h3>
                         <div class="cf-text">
-                            <h6>Sponsors</h6>
-                            <span>We appreciate you all for your kindness and willingness to help</span>
+                            <h6>Reporters</h6>
+                            <span>Donec turpis erat, scelerisq</span>
                         </div>
                     </div>
                 </div>
@@ -71,8 +64,8 @@ include('connection.php');
                     <div class="single-cool-fact d-flex align-items-center">
                         <h3><span class="counter">25</span></h3>
                         <div class="cf-text">
-                            <h6>Completed projects</h6>
-                            <span>We support talented and innovative students by sponsoring their projects and talents</span>
+                            <h6>Awards Won</h6>
+                            <span>Donec turpis erat, scelerisq</span>
                         </div>
                     </div>
                 </div>
@@ -82,8 +75,8 @@ include('connection.php');
                     <div class="single-cool-fact d-flex align-items-center">
                         <h3><span class="counter">17</span></h3>
                         <div class="cf-text">
-                            <h6>Beneficiaries</h6>
-                            <span>We are geared toward nurturing talents and helping needy students</span>
+                            <h6>Years Old</h6>
+                            <span>Donec turpis erat, scelerisq</span>
                         </div>
                     </div>
                 </div>
