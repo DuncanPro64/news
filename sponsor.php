@@ -38,8 +38,8 @@ include('connection.php');
                     <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our beloved sponsors. We thank the for your their kindness and willingness to give</p>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <p style="margin-left: 20%;margin-top: 1%;"><a href="#"><img src="img/core-img/contribution.png" height="30%" width="30%" alt=""></a>.</p>
-                    <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our beloved sponsors. We thank the for your their kindness and willingness to give</p>
+                    <p style="margin-left: 20%;margin-top: 1%;"><a href="#"><img src="https://img.icons8.com/wired/70/fa314a/donate.png"/></a>.</p>
+                    <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our sponsors. We thank the for your their kindness and willingness to give</p>
                 </div>
             </div>
 <?php
@@ -89,7 +89,7 @@ include('connection.php');
                         <h3><span class="counter">17</span></h3>
                         <div class="cf-text">
                             <h6>Beneficiaries</h6>
-                            <span>We are geared toward nurturing talents and helping needy students</span>
+                            <span>We are geared towards nurturing talents and helping needy students</span>
                         </div>
                     </div>
                 </div>

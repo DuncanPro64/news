@@ -21,29 +21,36 @@ include('connection.php');
 
             <div class="row">
                 <div class="col-12">
-                    <h2>A young and professional team</h2>
+                    <h2 style="margin-left:30%;"> Meet our Professional Team</h2>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 col-lg-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu metus sit amet odio sodales placerat. Sed varius leo ac leo fermentum, eu cursus nunc maximus. Integer convallis nisi nibh, et ornare neque ullamcorper ac. Nam id congue lec tus, a venenatis massa. Maecenas justo libero, vulputate vel nunc id, blandit feugiat sem.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur, purus imperdiet volutpat tincidunt, eros sem mollis quam, ut placerat urna neque at massa. Proin vitae pulvinar justo. Donec vel placerat enim, at ultricies risus.</p>
+                    <p>
+                    Campus vibes is a campus media startup concerned with consolidating news and activities around campuses and other technical institutions of higher learning. We seek to identify, nurture and market talents in campuses by providing an open platform for news updates, interchange programs among campuses, mentorship and supporting needy campus students through business ventures and donations</p>
+                    <p></p>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <p>Donec gravida non metus blandit facilisis. Cras tincidunt, lorem aliquam molestie eleifend, libero dui volutpat dui, nec sodales massa libero ut metus. Mauris pretium elit ut dapibus consequat. Nam ut lorem nec sem dignissim gravida. Duis fringilla.</p>
-                    <p>Donec turpis erat, scelerisque id euismod sit amet, fermentum vel dolor. Nulla facilisi. Sed pellentesque lectus et accumsan aliquam. Fusce lobortis cursus quam, id mattis sapien. Aliquam erat volutpat. Aliquam placerat, est quis sagittis tincidunt, ipsum eros posuere mi, ut finibus quam sem eget ex.</p>
+                    <p style="margin-left: 30%;"><img src="https://img.icons8.com/ios-filled/50/fa314a/us-news.png"/></p>
+                    <p>We are commited to providing timely and quality news updates to our clients. No number campus magazine is the only copy you need to stay updated.</p>
                 </div>
             </div>
 
             <div class="row align-items-center mt-80">
                 <!-- Single Cool Fact -->
+                <?php
+                 $query1 = mysqli_query($con, "select count(email) as total from editor");
+                 $result1= mysqli_fetch_array($query1);
+                 $query2 = mysqli_query($con, "select count(article_id) as articles from article");
+                 $result2= mysqli_fetch_array($query2);
+                ?>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact d-flex align-items-center">
-                        <h3><span class="counter">12</span>K</h3>
+                        <h3><span class="counter"><?php echo $result2['articles']; ?></span>K</h3>
                         <div class="cf-text">
                             <h6>News Article</h6>
-                            <span>Donec turpis erat, scelerisq</span>
+                            <span>We publish quality and more exciting news everyday</span>
                         </div>
                     </div>
                 </div>
@@ -51,10 +58,10 @@ include('connection.php');
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact d-flex align-items-center">
-                        <h3><span class="counter">45</span></h3>
+                        <h3><span class="counter"><?php echo $result1['total']; ?></span></h3>
                         <div class="cf-text">
                             <h6>Reporters</h6>
-                            <span>Donec turpis erat, scelerisq</span>
+                            <span>Meet our verified reporters and editors</span>
                         </div>
                     </div>
                 </div>
@@ -65,7 +72,7 @@ include('connection.php');
                         <h3><span class="counter">25</span></h3>
                         <div class="cf-text">
                             <h6>Awards Won</h6>
-                            <span>Donec turpis erat, scelerisq</span>
+                            <span>We are champions in our field. We have achieved so much and won many awards</span>
                         </div>
                     </div>
                 </div>
@@ -73,10 +80,10 @@ include('connection.php');
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact d-flex align-items-center">
-                        <h3><span class="counter">17</span></h3>
+                        <h3><span class="counter">5</span></h3>
                         <div class="cf-text">
                             <h6>Years Old</h6>
-                            <span>Donec turpis erat, scelerisq</span>
+                            <span>We celebrate five years of publishing news items and supporting campus students</span>
                         </div>
                     </div>
                 </div>
@@ -86,97 +93,34 @@ include('connection.php');
     <!-- ##### About Area End ##### -->
 
     <!-- ##### Team Area Start ##### -->
+    
     <section class="newspaper-team mb-30">
         <div class="container">
             <div class="row">
+<?php
+               
+                 $query = mysqli_query($con, "select count(email) as total from donation");
+                 $result= mysqli_fetch_array($query);
+  
+                $select = mysqli_query($con, "SELECT * FROM editor ");
 
+
+
+    while($rr=mysqli_fetch_array($select)){
+    ?>
                 <!-- Single Team Member -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member">
                         <img src="img/bg-img/t1.jpg" alt="">
                         <div class="team-info">
-                            <h5>James Williams</h5>
+                            <h5><?php echo $rr['f_name']; ?> <?php echo $rr['l_name']; ?></h5>
+                            <h6><?php echo $rr['email']; ?>r</h6>
                             <h6>Senior Editor</h6>
                         </div>
                     </div>
                 </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t2.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Christinne Smith</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t3.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Alicia Dormund</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t4.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Steve Duncan</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t5.jpg" alt="">
-                        <div class="team-info">
-                            <h5>James Williams</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t6.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Christinne Smith</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t7.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Alicia Dormund</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t8.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Steve Duncan</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
+ <?php } ?>
+                
             </div>
         </div>
     </section>
