@@ -42,12 +42,18 @@ include('connection.php');
                     <p>We are pleased to acknowledge the contributions made by our beloved Sponsors.They have helped touch and put a smile on a comrade. Below is the list of our beloved sponsors. We thank the for your their kindness and willingness to give</p>
                 </div>
             </div>
-
+<?php
+                 $query1 = mysqli_query($con, "select count(email) as total from donation");
+                 $result1= mysqli_fetch_array($query1);
+                 $query2 = mysqli_query($con, "select SUM(amount) as cash from donation");
+                 $result2= mysqli_fetch_array($query2); 
+                 $query3 = mysqli_query($con, "select count(status) as number from project");
+                 $result3= mysqli_fetch_array($query3);?>
             <div class="row align-items-center mt-80">
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact d-flex align-items-center">
-                        <h3><span class="counter">12</span>K</h3>
+                        <h3><span class="counter"><?php echo $result2['cash']/1000;?></span>K</h3>
                         <div class="cf-text">
                             <h6>Cash Donated</h6>
                             <span>We use this money to help needy students and run student projects.</span>
@@ -58,7 +64,7 @@ include('connection.php');
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact d-flex align-items-center">
-                        <h3><span class="counter">45</span></h3>
+                        <h3><span class="counter"> <?php echo $result1['total'];?></span></h3>
                         <div class="cf-text">
                             <h6>Sponsors</h6>
                             <span>We appreciate you all for your kindness and willingness to help</span>
@@ -69,7 +75,7 @@ include('connection.php');
                 <!-- Single Cool Fact -->
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-cool-fact d-flex align-items-center">
-                        <h3><span class="counter">25</span></h3>
+                        <h3><span class="counter"><?php echo $result3['number']; ?></span></h3>
                         <div class="cf-text">
                             <h6>Completed projects</h6>
                             <span>We support talented and innovative students by sponsoring their projects and talents</span>
@@ -98,92 +104,28 @@ include('connection.php');
             <div class="row">
 
                 <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t1.jpg" alt="">
-                        <div class="team-info">
-                            <h5>James Williams</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
+                 <?php
+                 $query1 = mysqli_query($con, "select count(email) as total from donation");
+                 $result1= mysqli_fetch_array($query1);
+  
+                $select = mysqli_query($con, "SELECT * FROM donation ");
 
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t2.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Christinne Smith</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t3.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Alicia Dormund</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Team Member -->
+    while($rr=mysqli_fetch_array($select)){
+    ?>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="single-team-member">
                         <img src="img/bg-img/t4.jpg" alt="">
                         <div class="team-info">
-                            <h5>Steve Duncan</h5>
+                            <h5><?php echo $rr['email']; ?></h5>
+                             <h5><?php echo $rr['phone']; ?></h5>
                             <h6>Senior Editor</h6>
                         </div>
                     </div>
                 </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t5.jpg" alt="">
-                        <div class="team-info">
-                            <h5>James Williams</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t6.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Christinne Smith</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t7.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Alicia Dormund</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Team Member -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="single-team-member">
-                        <img src="img/bg-img/t8.jpg" alt="">
-                        <div class="team-info">
-                            <h5>Steve Duncan</h5>
-                            <h6>Senior Editor</h6>
-                        </div>
-                    </div>
-                </div>
+ <?php } ?>
+             
             </div>
         </div>
     </section>
