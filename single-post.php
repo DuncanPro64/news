@@ -137,14 +137,8 @@ $article_id = $_GET['article_id'];
                                             <h6>'.$content.'</h6>
                                         </a>
                                         <div class="post-meta d-flex align-items-center">
-<<<<<<< HEAD
-                                            <a href="#" class="post-like" name="like-article" id="'.$rr['article_id'].'"><img src="img/core-img/like.png" alt="like button"> <span id="likea" class="likes">'.$rr['likes'].'</span></a>
-                                            
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt="comment button"> <span>10</span></a>
-=======
-                                            <a href="#" class="post-like"><img src="https://img.icons8.com/ios/35/4a90e2/good-quality--v1.png"/> <span>392</span></a>
+                                            <a href="#" class="post-like"><img src="https://img.icons8.com/ios/35/4a90e2/good-quality--v1.png"/> <span id="likea" class="likes">'.$rr['likes'].'</span></a>
                                             <a href="#" class="post-comment"><img src="https://img.icons8.com/windows/32/4a90e2/topic--v1.png"/> <span>10</span></a>
->>>>>>> e5eb879ad4c12040fa5516e098f6fbb995ac5625
                                         </div>
                                     </div>
                                 </div>
@@ -296,113 +290,7 @@ while($rr=mysqli_fetch_array($select)){
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
 
-        <!-- Main Footer Area -->
-        <div class="main-footer-area">
-            <div class="container">
-                <div class="row">
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Footer Logo -->
-                            <div class="footer-logo">
-                                <a href="index.php"><img src="img/core-img/logo.gif" alt="" ></a>
-                            </div>
-                            <!-- List -->
-                             <ul class="list">
-                                <li><a href="mailto:contact@youremail.com">customercare@campusvibes.com</a></li>
-                                <li><a href="tel:+4352782883884">+254 714 757251</a></li>
-                                <li><a href="http://yoursitename.com">www.campusvibes.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-6 col-lg-2">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Title -->
-                            <h4 class="widget-title">Politics</h4>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Markets</a></li>
-                                <li><a href="#">Tech</a></li>
-                                <li><a href="#">Luxury</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-4 col-lg-2">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Title -->
-                            <h4 class="widget-title">Featured</h4>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="#">Football</a></li>
-                                <li><a href="#">Golf</a></li>
-                                <li><a href="#">Tennis</a></li>
-                                <li><a href="#">Motorsport</a></li>
-                                <li><a href="#">Horseracing</a></li>
-                                <li><a href="#">Equestrian</a></li>
-                                <li><a href="#">Sailing</a></li>
-                                <li><a href="#">Skiing</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-4 col-lg-2">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Title -->
-                            <h4 class="widget-title">FAQ</h4>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="#">Aviation</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Traveller</a></li>
-                                <li><a href="#">Destinations</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Food/Drink</a></li>
-                                <li><a href="#">Hotels</a></li>
-                                <li><a href="#">Partner Hotels</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-sm-4 col-lg-2">
-                        <div class="footer-widget-area mt-80">
-                            <!-- Title -->
-                            <h4 class="widget-title">+More</h4>
-                            <!-- List -->
-                            <ul class="list">
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Architecture</a></li>
-                                <li><a href="#">Arts</a></li>
-                                <li><a href="#">Autos</a></li>
-                                <li><a href="#">Luxury</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Footer Area -->
-        <div class="bottom-footer-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        
-                        <p>
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+       <?php include('footer.php'); ?>
     </footer>
     <!-- ##### Footer Area Start ##### -->
 
@@ -443,10 +331,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
                 });
 
-
-
-
-        </script>
+    </script>
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
