@@ -26,12 +26,16 @@ $mpesa = new Mpesa();
                 "TransactionDesc"=> "Payment of X" 
 
             ]);
+
+
             
 
         }catch(\Exception $e){
             $response = json_decode($e->getMessage());
         }
 
-        header('Content-Type: application/json');
+        
         echo json_encode($response);
+        // header('Content-Type: application/json');
+        // header('Location :index.php');
     }
