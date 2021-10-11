@@ -117,10 +117,12 @@ $article_id = $_GET['article_id'];
                    
                         $query = "SELECT * FROM category as c INNER JOIN article as a ON c.cat_id=a.category_id LIMIT 2 ";
                         $row= mysqli_query($con,$query) or die(mysqli_error($con));
-                       
-                         foreach ($row as $rr) {
+                      
+                        foreach ($row as $rr) {
                         $cut_string = $rr['content'];
                         $content = substr($cut_string, 0,100);    
+
+   
 
                         echo'
                             <!-- Single Post -->
@@ -135,8 +137,9 @@ $article_id = $_GET['article_id'];
                                             <h6>'.$content.'</h6>
                                         </a>
                                         <div class="post-meta d-flex align-items-center">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
+                                            <a href="#" class="post-like" name="like-article" id="'.$rr['article_id'].'"><img src="img/core-img/like.png" alt="like button"> <span id="likea" class="likes">'.$rr['likes'].'</span></a>
+                                            
+                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt="comment button"> <span>10</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -397,6 +400,48 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->
+
+    <script>
+        $(document).ready(function(){
+
+                // like and unlike click
+                $(".post-like").click(function(){
+                    var id = this.id;   // Getting Button id
+                    var postid = id;  // postid
+                    console.log("here is a checkpoint");
+                    // AJAX Request
+                    $.ajax({
+
+                        url: 'like-article.php',
+                        type: 'POST',
+                        data: {postid:postid},
+                        dataType: 'json',
+                        success: function(result){
+
+                        // setting unlikes
+                                var likes= result['likes'];
+                                var likes  = likes.toString();
+                                console.log(likes);
+    
+                                $('#likes').text(likes);
+                                // #likes.innerHTML = likes;
+                                $('#likea').html(likes); 
+                                console.log("here");
+                            
+                                $("#"+postid).css("background-color","red");
+                        }
+                        
+                        
+                    });
+
+                });
+
+                });
+
+
+
+
+        </script>
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
