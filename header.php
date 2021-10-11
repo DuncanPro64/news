@@ -112,7 +112,7 @@
                                                 <li class="title"  style="font-weight: bold;"><img src="https://img.icons8.com/wired/64/fa314a/donate.png"/>DONATIONS</li>
                                                 <li><a href="#">Learn How</a></li>
                                                 <li><a href="sponsor.php"> Sponsors</a></li>
-                                                <li><a href="contact.html"> Projects</a></li>
+                                                <li><a href="#"> Projects</a></li>
                                                 <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Donate</a></li>
                                             </ul>
                                             <div class="single-mega cn-col-4">
