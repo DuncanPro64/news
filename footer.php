@@ -15,6 +15,7 @@
                                 <li><a href="tel:+254 714 757251">+254 769869064</a></li>
                                 <li><a href="tel:+254 714 757251">+254 714 757251</a></li>
                                 <li><a href="http://yoursitename.com">www.campusvibes.com</a></li>
+                                 <li><a href="contact.php"> Send Us a Message</a></li>
                             </ul>
                         </div>
                     </div>

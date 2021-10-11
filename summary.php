@@ -17,7 +17,7 @@ include('head-seo.php');
 		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet" type="text/css">
 		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="summary.css">
 
 	</head>
 
@@ -122,7 +122,26 @@ include('head-seo.php');
 
 						</div> <!-- .featured-clients -->
 
-						<div class="social-share">
+						
+
+					</div> <!-- .content -->
+				</div> <!-- .container -->
+			</main> <!-- .main-content -->
+	 <div class="footer-add-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-add">
+                        <a href="#"><img src="img/bg-img/footer-add.gif" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Footer Add Area End ##### -->
+
+    <!-- social links section -->
+    <div class="social-share">
 							
 							<div class="social-links">
 								<h3>Share with friends:</h3>
@@ -134,26 +153,20 @@ include('head-seo.php');
 							
 							
 						</div>
+    <!-- social links section end -->
 
-					</div> <!-- .content -->
-				</div> <!-- .container -->
-			</main> <!-- .main-content -->
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
 
-			<footer class="site-footer">
-				<div class="container">
-					<div class="company-info">
-						<span>Campus Vibes Inc</span>
-						<span>535 Avenue Street, Nairobi</span>
-						<span><a href="mailto:campusvibes@yandex.com">Campusvibes@yandex.com</a></span>
-						<span><a href="tel:0769869064">(+254) 0769869064 </a></span>
-					</div> <!-- .company-info -->
-					<p class="copy">Copyright 2014 Campus vibes. Designed by Campus Vibes. All rights reserved.</p>
-				</div> <!-- .container -->
-			</footer> <!-- .site-footer -->
-		</div> <!-- #site-content -->
-		
-	</body>
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+       <?php include('footer.php'); ?>
+    </footer>
+    <?php include('donate.php'); ?>
+
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
     <script src="js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
@@ -175,4 +188,7 @@ include('head-seo.php');
     });
 });
 </script>
+		
+	</body>
+
 </html>
