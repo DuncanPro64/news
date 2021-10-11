@@ -104,7 +104,7 @@
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title"  style="font-weight: bold;">THE MAGAZINE</li>
                                                 <li><a href="#">Read Online</a></li>
-                                                <li><a href="#">Download for free</a></li>
+                                                <li><a href="#">Pre-order</a></li>
                                                 <li><a href="#">View Summaries</a></li>
                                                 <li><a href="about.php">Editors</a></li>
                                             </ul>
