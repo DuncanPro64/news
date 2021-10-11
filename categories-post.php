@@ -159,10 +159,9 @@ include('connection.php');
                         ?>
                     </select>
                 </div>
-                        
-                                
-            <button type="submit" name='subscribe' class="btn w-100">Subscribe</button>
-        </form>
+                                       
+                <button type="submit" name='subscribe' class="btn w-100">Subscribe</button>
+            </form>
                         </div>
 
                         <!-- Latest Comments Widget -->
