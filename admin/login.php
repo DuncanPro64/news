@@ -17,7 +17,7 @@
 <body class="hold-transition login-page" style="background-color: white;">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../index.php"><img src="../img/core-img/logo2.jpg" alt="" height="40%"  width="40%"></a>
+    <a href="../index.php"><img src="../img/core-img/logo2.jpg" alt="" height="60%"  width="60%"></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
