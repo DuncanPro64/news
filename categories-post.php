@@ -82,8 +82,8 @@ include('connection.php');
                                     <p class="post-excerp">'.$excerp.' </p>
                                     <!-- Post Like & Post Comment -->
                                     <div class="d-flex align-items-center">
-                                        <a href="" class="post-like"><img src="img/core-img/like.png" alt=""> <span>'.$data['likes'].'</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>'.$row1[0].'</span></a>
+                                        <a href="" class="post-like"><img src="https://img.icons8.com/ios/35/4a90e2/good-quality--v1.png"/> <span>'.$data['likes'].'</span></a>
+                                        <a href="#" class="post-comment"><img src="https://img.icons8.com/windows/32/4a90e2/topic--v1.png"/><span>'.$row1[0].'</span></a>
                                     </div>
                                 </div>
                             </div>

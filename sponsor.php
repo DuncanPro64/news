@@ -89,7 +89,7 @@ include('connection.php');
                         <h3><span class="counter">17</span></h3>
                         <div class="cf-text">
                             <h6>Beneficiaries</h6>
-                            <span>We are geared toward nurturing talents and helping needy students</span>
+                            <span>We are geared towards nurturing talents and helping needy students</span>
                         </div>
                     </div>
                 </div>
