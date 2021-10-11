@@ -89,8 +89,8 @@ while($rr=mysqli_fetch_array($row)){
                                         <p class="post-excerp"><?php echo $rr['article_title']; ?></p>
                                         <!-- Post Like & Post Comment -->
                                         <div class="d-flex align-items-center">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span><?php echo $rr['likes']; ?></span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $count; ?></span></a>
+                                            <a href="#" class="post-like"><img src="https://img.icons8.com/ios/35/4a90e2/good-quality--v1.png"/> <span><?php echo $rr['likes']; ?></span></a>
+                                            <a href="#" class="post-comment"><img src="https://img.icons8.com/windows/32/4a90e2/topic--v1.png"/> <span><?php echo $count; ?></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -130,8 +130,8 @@ while($rr=mysqli_fetch_array($select)){
                                         </a>
                                         <!-- Post Like & Post Comment -->
                                         <div class="d-flex align-items-center">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span><?php echo $rr['likes']; ?></span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $count ?></span></a>
+                                            <a href="#" class="post-like"><img src="https://img.icons8.com/ios/35/4a90e2/good-quality--v1.png"/> <span><?php echo $rr['likes']; ?></span></a>
+                                            <a href="#" class="post-comment"><img src="https://img.icons8.com/windows/32/4a90e2/topic--v1.png"/> <span><?php echo $count ?></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -220,8 +220,8 @@ while($rr=mysqli_fetch_array($row)){
                     <h6>'.$rr['article_title'].'</h6>
                 </a>
                 <div class="post-meta d-flex align-items-center">
-                    <a href="single-post.php?article_id='.$rr['article_id'].'" class="post-like"><img src="img/core-img/like.png" alt=""> <span>'.$rr['likes'].'</span></a>
-                    <a href="single-post.php?article_id='.$rr['article_id'].'" class="post-comment"><img src="img/core-img/chat.png" alt="like button" name="like_btn"> <span>'.$count.'</span></a>
+                    <a href="single-post.php?article_id='.$rr['article_id'].'" class="post-like"><img src="https://img.icons8.com/ios/35/4a90e2/good-quality--v1.png"/> <span>'.$rr['likes'].'</span></a>
+                    <a href="single-post.php?article_id='.$rr['article_id'].'" class="post-comment"><img src="https://img.icons8.com/windows/32/4a90e2/topic--v1.png"/> <span>'.$count.'</span></a>
                 </div>
             </div>
         </div>

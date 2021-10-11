@@ -8,7 +8,7 @@
             <img src="img/bg-img/29.jpg" alt="">
         </div>
         <div class="comments-text">
-            <a href="#">'.$rr['content'].'<br><span>on</span>'.date('F d ,Y', strtotime($rr['date'])).'</a>
+            <a href="#">'.$rr['c_content'].'<br></a>
             <p>'.date('F d ,Y', strtotime($rr['date'])).'</p>
         </div>
     </div>';

@@ -64,7 +64,8 @@ include('connection.php');
 
                         while($data=mysqli_fetch_array($row)){
                             $excerp = substr($data['content'],0,100);
-                            $article_id = $data['article_id'];   
+                            $article_id = $data['article_id'];
+                             
                             $comments = mysqli_query($con,"SELECT COUNT(*) FROM comment WHERE article_id=$article_id") or die(mysqli_error($con));
                             $row1 = mysqli_fetch_array($comments);
                             echo'<!-- Single Featured Post -->
@@ -73,7 +74,7 @@ include('connection.php');
                                 <a href="#"><img src="img/bg-img/25.jpg" alt=""></a>
                             </div>
                             <div class="post-data">
-                                <a href="single-post.php?article_id='.$data['article_id'].'" class="post-catagory">'.$data['cat_name'].'</a>
+                                <a href="single-post.php?article_id='.$data['article_id'].'" class="pos-catagory">'.$data['cat_name'].'</a>
                                 <a href="single-post.php?article_id='.$data['article_id'].'" class="post-title">
                                     <h6>'.$data['article_title'].'</h6>
                                 </a>
@@ -92,7 +93,8 @@ include('connection.php');
                         <li class="uk-open">
                             <a class="uk-accordion-title" href="">'.$row1[0].'Comments</a>
                             <div class="uk-accordion-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                                <p>'.$data['c_content'].'</p>
                             </div>
                         </li>
                     </ul><br>';
