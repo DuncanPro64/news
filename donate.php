@@ -1,6 +1,6 @@
 
 
-<form>
+<form method='POST' action="payment-processing.php">
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <h2 id="offcanvasRightLabel">SPONSOR US</h2>
@@ -10,30 +10,30 @@
 
   <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1"></span>
-  <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" name="name" required>
 </div>
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1"></span>
-  <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name="email" required>
 </div>
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1"></span>
-  <input type="phone" class="form-control" placeholder="Phone(+254...)" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="phone" class="form-control" placeholder="Phone(+254...)" aria-label="Username" aria-describedby="basic-addon1" name="phone" required>
 </div>
 
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Ksh.</span>
-  <input type="text" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="text" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1" name="amount" required>
 </div>
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1"></span>
-  <input type="text" class="form-control" placeholder="University" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="text" class="form-control" placeholder="University" aria-label="Username" aria-describedby="basic-addon1" name="university"required>
 </div>
 <div class="d-grid gap-2">
-<button type="button" class="btn btn-outline-success">Make Donation</button>
+<button type="submit" class="btn btn-outline-success" name="donate">Make Donation</button>
 </div>
 </form>

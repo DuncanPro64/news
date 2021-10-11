@@ -15,7 +15,7 @@ include('connection.php');
     $date=date("Y/m/d");
     
      
-    $add=mysqli_query($con,"INSERT INTO messages(m_subject,sender_mail,message,date) VALUES ('$subject','$email','$message','$date')") or die(mysqli_error($db));
+    $add=mysqli_query($con,"INSERT INTO messages(m_subject,sender_mail,message,date) VALUES ('$subject','$email','$message','$date')") or die(mysqli_error($con));
     
 if($add==true){
     $_session['message']="message inserted successfully";

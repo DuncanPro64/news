@@ -148,22 +148,20 @@ include('connection.php');
                             <input type="email" name="email" placeholder="Email">
                         <div class="form-group">
                             <!-- <label>University</label> -->
-                        <select class="form-control select2" style="width: 100%;" name="category">
-                            <option selected="selected">Select Category</option>';
-                            <?php
-                                $query = "SELECT * FROM category";
-                                $result = mysqli_query($con,$query) or die(mysqli_error($con));
-                                while($row =mysqli_fetch_assoc($result)){
-                                echo'<option value="'.$row['cat_name'].'">'.$row['cat_name'].'</option>';
-                                }
-                                ?>
-                            </select>
-                            </div>
+                  <select class="form-control select2" style="width: 100%;" name="category">
+                    <option selected="selected">Select Category</option>';
+                    <?php
+                        $query = "SELECT * FROM category";
+                        $result = mysqli_query($con,$query) or die(mysqli_error($con));
+                        while($row =mysqli_fetch_assoc($result)){
+                        echo'<option value="'.$row['cat_name'].'">'.$row['cat_name'].'</option>';
+                        }
+                        ?>
+                    </select>
                 </div>
-                        
-                                
-            <button type="submit" name='subscribe' class="btn w-100">Subscribe</button>
-        </form>
+                                       
+                <button type="submit" name='subscribe' class="btn w-100">Subscribe</button>
+            </form>
                         </div>
 
                         <!-- Latest Comments Widget -->
