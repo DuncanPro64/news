@@ -88,6 +88,14 @@ include('connection.php');
                                 </div>
                             </div>
                         </div>';
+                        echo'<ul uk-accordion>
+                        <li class="uk-open">
+                            <a class="uk-accordion-title" href="">'.$row1[0].'Comments</a>
+                            <div class="uk-accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </li>
+                    </ul><br>';
 
                         }
 
@@ -169,6 +177,10 @@ include('connection.php');
             </div>
         </div>
     </div>
+
+
+
+
     <!-- ##### Blog Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
@@ -176,6 +188,7 @@ include('connection.php');
 
     <?php include('footer.php'); ?>
     </footer>
+    <?php include('donate.php'); ?>
     <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Files ##### -->
