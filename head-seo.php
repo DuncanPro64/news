@@ -14,5 +14,8 @@
         <link rel="stylesheet" type="text/css" href="assets/css/jquery.fancybox.css">
         <link rel="stylesheet" type="text/css" href="assets/css/themes.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="ui-kit/css/uikit.min.css" />
+        <script src="uikit/js/uikit.min.js"></script>
+        <script src="uikit/js/uikit-icons.min.js"></script>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">

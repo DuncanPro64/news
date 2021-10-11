@@ -83,11 +83,19 @@ include('connection.php');
                                     <!-- Post Like & Post Comment -->
                                     <div class="d-flex align-items-center">
                                         <a href="" class="post-like"><img src="img/core-img/like.png" alt=""> <span>'.$data['likes'].'</span></a>
-                                        <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>'.$row1[0].'</span></a>
+                                        <a href="#" class="post-comment uk-accordion-title "><img src="img/core-img/chat.png" alt=""> <span>'.$row1[0].'</span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>';
+                        echo'<ul uk-accordion>
+                        <li class="uk-open">
+                            <a class="uk-accordion-title" href="">'.$row1[0].'Comments</a>
+                            <div class="uk-accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </li>
+                    </ul><br>';
 
                         }
 
