@@ -96,8 +96,7 @@
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title" style="font-weight: bold;"><img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/60/fa314a/external-target-business-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>HITS OF THE WEEK</li>
                                                 <li><a href="#">Top Editor</a></li>
-                                                <li><a href="#">Top Photographer</a></li>
-                                                <li><a href="#">Photo of the week</a></li>
+                                                <li><a href="gallery.php">Photo of the week</a></li>
                                                 <li><a href="#">Article of the week</a></li>
                                                 
                                             </ul>
@@ -110,7 +109,6 @@
                                             </ul>
                                                <ul class="single-mega cn-col-4">
                                                 <li class="title"  style="font-weight: bold;"><img src="https://img.icons8.com/wired/64/fa314a/donate.png"/>DONATIONS</li>
-                                                <li><a href="#">Learn How</a></li>
                                                 <li><a href="sponsor.php"> Sponsors</a></li>
                                                 <li><a href="#"> Projects</a></li>
                                                 <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Donate</a></li>
