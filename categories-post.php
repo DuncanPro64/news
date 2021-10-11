@@ -177,6 +177,10 @@ include('connection.php');
             </div>
         </div>
     </div>
+
+
+
+
     <!-- ##### Blog Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
@@ -184,6 +188,7 @@ include('connection.php');
 
     <?php include('footer.php'); ?>
     </footer>
+    <?php include('donate.php'); ?>
     <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Files ##### -->

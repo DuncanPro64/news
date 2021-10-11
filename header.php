@@ -15,8 +15,9 @@
                             <div class="login-search-area d-flex align-items-center">
                                 <!-- Login -->
                                 <div class="login d-flex">
-                                    <a href="admin/login.php">Login</a>
-                                    <a href="admin/register.html">Register as an Editor</a>
+                                    <a href="admin/login.php">LOGIN</a>
+                                    <a href="admin/register.php">BECOME EDITOR</a>
+                                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">DONATE<i class="fas fa-donate"></i></a>
                                 </div>
                                 <!-- Search Form -->
                                 <div class="search-form">
@@ -24,6 +25,8 @@
                                         <input type="search" name="search" class="form-control" placeholder="Search">
                                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                     </form>
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -110,7 +113,7 @@
                                                 <li><a href="#">Learn How</a></li>
                                                 <li><a href="sponsor.php"> Sponsors</a></li>
                                                 <li><a href="contact.html"> Projects</a></li>
-                                                <li><a href="#">Donate</a></li>
+                                                <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Donate</a></li>
                                             </ul>
                                             <div class="single-mega cn-col-4">
                                                 <?php
@@ -145,9 +148,11 @@
                                 </ul>
                             </div>
                             <!-- Nav End -->
+
                         </div>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
+

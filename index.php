@@ -298,6 +298,7 @@ while($rr=mysqli_fetch_array($row)){
 </div>
 </div>
 </div>
+
     <!-- ##### Popular News Area End ##### -->
 
     <!-- ##### Video Post Area Start ##### -->
@@ -475,6 +476,7 @@ while($rr=mysqli_fetch_array($row2)){
 
        <?php include('footer.php'); ?>
     </footer>
+    <?php include('donate.php'); ?>
 
     <!-- ##### Footer Area Start ##### -->
 
