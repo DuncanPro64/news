@@ -74,8 +74,8 @@ $article_id = $_GET['article_id'];
 
                                         <!-- Post Like & Post Comment -->
                                         <div class="d-flex align-items-center post-like--comments">
-                                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span>392</span></a>
-                                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span>10</span></a>
+                                            <a href="#" class="post-like"><img src="https://img.icons8.com/ios/35/4a90e2/good-quality--v1.png"/> <span>392</span></a>
+                                            <a href="#" class="post-comment"><img src="https://img.icons8.com/windows/32/4a90e2/topic--v1.png"/> <span>10</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -137,9 +137,14 @@ $article_id = $_GET['article_id'];
                                             <h6>'.$content.'</h6>
                                         </a>
                                         <div class="post-meta d-flex align-items-center">
+<<<<<<< HEAD
                                             <a href="#" class="post-like" name="like-article" id="'.$rr['article_id'].'"><img src="img/core-img/like.png" alt="like button"> <span id="likea" class="likes">'.$rr['likes'].'</span></a>
                                             
                                             <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt="comment button"> <span>10</span></a>
+=======
+                                            <a href="#" class="post-like"><img src="https://img.icons8.com/ios/35/4a90e2/good-quality--v1.png"/> <span>392</span></a>
+                                            <a href="#" class="post-comment"><img src="https://img.icons8.com/windows/32/4a90e2/topic--v1.png"/> <span>10</span></a>
+>>>>>>> e5eb879ad4c12040fa5516e098f6fbb995ac5625
                                         </div>
                                     </div>
                                 </div>
@@ -176,7 +181,7 @@ $article_id = $_GET['article_id'];
                                         <div class="comment-meta">
                                             <a href="#" class="post-author"><?php echo $rr['commenter_name']; ?></a>
                                             <a href="#" class="post-date"><?php echo date('F d, Y', strtotime($rr['date'])); ?></a>
-                                            <p><?php echo $rr['content']; ?></p>
+                                            <p><?php echo $rr['c_content']; ?></p>
                                         </div>
                                     </div>
                                      <?php }?>
