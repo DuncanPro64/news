@@ -105,7 +105,7 @@
                                                 <li class="title"  style="font-weight: bold;"><img src="https://img.icons8.com/external-photo3ideastudio-lineal-photo3ideastudio/64/fa314a/external-magazine-home-office-photo3ideastudio-lineal-photo3ideastudio.png"/>THE MAGAZINE</li>
                                                 <li><a href="#">Read Online</a></li>
                                                 <li><a href="#">Pre-order</a></li>
-                                                <li><a href="#">View Summaries</a></li>
+                                                <li><a href="summary.php">View Summaries</a></li>
                                                 <li><a href="about.php">Editors</a></li>
                                             </ul>
                                                <ul class="single-mega cn-col-4">
