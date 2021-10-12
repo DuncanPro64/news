@@ -95,9 +95,8 @@
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title" style="font-weight: bold;"><img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/60/fa314a/external-target-business-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>HITS OF THE WEEK</li>
-                                                <li><a href="#">Top Editor</a></li>
                                                 <li><a href="gallery.php">Photo of the week</a></li>
-                                                <li><a href="#">Article of the week</a></li>
+                                                <li><a href="single-post.php?article_id=5">Article of the week</a></li>
                                                 
                                             </ul>
                                             <ul class="single-mega cn-col-4">
