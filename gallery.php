@@ -213,7 +213,7 @@ include('head-seo.php');
                             </figcaption>			
                         </figure>
                         <figure class="effect-chico tm-gallery-item portrait">
-                            <img src="img/gallery/portrait-05.jpg" alt="Image"/>
+                            <img src="img/bg-img/gallery/portrait-05.jpg" alt="Image"/>
                             <figcaption>
                                 <p>Chico's main fear was missing the morning bus.</p>							
                             </figcaption>			
