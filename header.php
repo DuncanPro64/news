@@ -95,14 +95,13 @@
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title" style="font-weight: bold;"><img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/60/fa314a/external-target-business-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>HITS OF THE WEEK</li>
-                                                <li><a href="#">Top Editor</a></li>
                                                 <li><a href="gallery.php">Photo of the week</a></li>
-                                                <li><a href="#">Article of the week</a></li>
+                                                <li><a href="single-post.php?article_id=5">Article of the week</a></li>
                                                 
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title"  style="font-weight: bold;"><img src="https://img.icons8.com/external-photo3ideastudio-lineal-photo3ideastudio/64/fa314a/external-magazine-home-office-photo3ideastudio-lineal-photo3ideastudio.png"/>THE MAGAZINE</li>
-                                                <li><a href="#">Read Online</a></li>
+                                                <li><a href="read.php">Read Online</a></li>
                                                 <li><a href="#">Pre-order</a></li>
                                                 <li><a href="summary.php">View Summaries</a></li>
                                                 <li><a href="about.php">Editors</a></li>
