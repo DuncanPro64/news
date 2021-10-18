@@ -17,6 +17,16 @@ include('head-seo.php');
 <meta name="robots" content="index, follow">
 <link rel="stylesheet" href="css/read.css">
 <link rel="stylesheet" href="css/responsive.css">
+<style>
+div.content {
+  background-color: lightblue;
+  width: 50px;
+  height: 110px;
+  overflow: scroll;
+}
+
+
+</style>
 </head>
 <body>
 
@@ -92,10 +102,9 @@ include('head-seo.php');
 			<!--post item-->
 			<div class="item">
 				<h1 style="background-color:#fa314a;text-align: center;">#ISSUE <i>1</i></h1>
-				<p>This template, updated after almost 9 years since the original release in 2008, is released under the <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution Non-Commercial License</a>. If you use it, you must retain the "Template Design by MLP Design" tag and link in place. You MAY NOT use the templates in adult or adult-oriented websites!</p>
-				<p>If you wish to use a template for commercial purposes or wish to remove the credit tag and link, please contact us.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<blockquote><p>Proin congue risus eget eros. Morbi ornare, enim ac convallis pellentesque, metus arcu sagittis diam, nec fringilla nunc eros id arcu. Nunc sagittis ligula id justo. Nam et pede a mi facilisis consequat. Quisque tincidunt, turpis vel commodo lacinia, arcu odio bibendum metus, eget elementum ipsum eros sit amet velit.</p></blockquote>
+				
+				<embed src="campus.pdf" width="100%" height="100%" 
+ 				type="application/pdf">
 				<ul>
 					<li>Love Life in Campus</li>
 					<li>How do you start a business in Campus</li>
