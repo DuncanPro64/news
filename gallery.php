@@ -2,29 +2,25 @@
 include('connection.php');
 include('header.php');
 include('head-seo.php');
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo of the Week</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Campus Vibes |Photo of the Week</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
     <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link rel="stylesheet" href="css/magnific-popup.css"> 
-    <link rel="stylesheet" href="css/gallery.css"> 
-<!--
-    
-TemplateMo 554 Ocean Vibes
+    <link rel="stylesheet" href="css/galleries.css"> 
+     <link rel="stylesheet" href="style.css"> 
 
-https://templatemo.com/tm-554-ocean-vibes
-
--->
 </head>
 <body style="background-color: #e8e8e8;">
     <header class="tm-site-header">
+
         <img src="https://img.icons8.com/external-flatart-icons-solid-flatarticons/40/fa314a/external-award-digital-marketing-flatart-icons-solid-flatarticons.png"/><i><small style="color: #ee002d;font-family: sans-serif; font-size: 14px;"><span style="color:black;">#</span> Photo of the week</small></i>
     </header>
 
@@ -217,7 +213,7 @@ https://templatemo.com/tm-554-ocean-vibes
                             </figcaption>			
                         </figure>
                         <figure class="effect-chico tm-gallery-item portrait">
-                            <img src="img/gallery/portrait-05.jpg" alt="Image"/>
+                            <img src="img/bg-img/gallery/portrait-05.jpg" alt="Image"/>
                             <figcaption>
                                 <p>Chico's main fear was missing the morning bus.</p>							
                             </figcaption>			
