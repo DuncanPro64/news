@@ -20,7 +20,7 @@
     <a href="../index.php"><img src="../img/core-img/logo2.jpg" alt="" height="60%"  width="60%"></a>
   </div>
   <!-- /.login-logo -->
-  <div class="card">
+  <div class="card" style="box-shadow: 5px 10px 8px #888888;">
     <div class="card-body login-card-body">
       <p class="login-box-msg" style="color:black;font-weight: bold;">Sign in<br><small style="color:black;">Stay updated on campus matters</small ></p>
 

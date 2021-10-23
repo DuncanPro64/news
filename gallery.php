@@ -15,21 +15,27 @@ include('head-seo.php');
     <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
     <link rel="stylesheet" href="css/magnific-popup.css"> 
     <link rel="stylesheet" href="css/galleries.css"> 
-     <link rel="stylesheet" href="style.css"> 
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="cs"> 
+ 
 
 </head>
 <body style="background-color: #e8e8e8;">
-    <header class="tm-site-header">
-
-        <img src="https://img.icons8.com/external-flatart-icons-solid-flatarticons/40/fa314a/external-award-digital-marketing-flatart-icons-solid-flatarticons.png"/><i><small style="color: #ee002d;font-family: sans-serif; font-size: 14px;"><span style="color:black;">#</span> Photo of the week</small></i>
+<header class="tm-site-header">
+<div class="top" style="display:flex; justify-content: space-between;">
+<div class="column"><img src="https://img.icons8.com/external-flatart-icons-solid-flatarticons/40/fa314a/external-award-digital-marketing-flatart-icons-solid-flatarticons.png"/><br><i><small>#Photo of the week<br>Published on Aug 02 2021<br> By Amos Junior</small></i></div>
+  <div class="column"><a href="#"><img src="https://img.icons8.com/external-those-icons-fill-those-icons/40/fa314a/external-like-feedback-those-icons-fill-those-icons.png"/></a><br><i><small>16K Likes</small></i>
+  </div>
+  <div class="column" style="text-align: center;"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#addphoto" aria-controls="offcanvasRight"><img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/40/fa314a/external-add-photography-kiranshastry-solid-kiranshastry.png"/></a><br><i><small>Publish your Photo</small></i>
+</div>
+</div>
     </header>
-
     <!-- Video banner 400 px height -->
     <div id="tm-video-container">
         <video autoplay muted loop id="tm-video">
             <source src="video/ocean-sea-wave-video.mp4" type="video/mp4">
         </video>  
-        <i id="tm-video-control-button" class="fas fa-pause"></i>
+        <i id="tm-video-control-button" class="fas fa-pause" style="color:#ee002d;"></i>
     </div>
     <div class="tm-container">
         <nav class="tm-main-nav">
@@ -70,8 +76,8 @@ include('head-seo.php');
         <!-- Popup itself -->
         <div id="intro" class="popup mfp-with-anim mfp-hide tm-bg-gray">
             <a href="#" class="tm-close-popup">
-                Back
-                <i class="fas fa-times"></i>
+                
+                <img src="https://img.icons8.com/ios-glyphs/30/fa314a/macos-close.png"/>
             </a>
             <div class="tm-row tm-intro-row">
                 <img src="img/bg-img/testimonial-01.jpg" alt="Image" class="tm-intro-img">
@@ -110,7 +116,7 @@ include('head-seo.php');
                                 menu.
                             </p>
                             <div class="tm-text-center">
-                                <a href="#" class="tm-btn tm-btn-primary mfp-prevent-close tm-btn-next">
+                                <a href="#" class="tm-btn tm-btn-danger mfp-prevent-close tm-btn-next">
                                     Next Page
                                 </a>
                             </div>                            
@@ -122,8 +128,8 @@ include('head-seo.php');
 
         <div id="gallery" class="popup mfp-with-anim mfp-hide tm-bg-gray">
             <a href="#" class="tm-close-popup">
-            Close
-                <i class="fas fa-times"></i>
+            
+                <img src="https://img.icons8.com/ios-glyphs/30/fa314a/macos-close.png"/>
             </a>
             <div class="tm-row tm-gallery-row">
                 <div class="tm-gallery">
@@ -376,8 +382,8 @@ include('head-seo.php');
 
         <div id="testimonials" class="popup mfp-with-anim mfp-hide tm-bg-gray">
             <a href="#" class="tm-close-popup">
-                Close
-                <i class="fas fa-times"></i>
+                
+                <img src="https://img.icons8.com/ios-glyphs/30/fa314a/macos-close.png"/>
             </a>
             <div class="tm-testimonials-inner">
                 <h2 class="tm-color-gray tm-testimonial-col tm-page-title">Testimonials</h2>
@@ -424,7 +430,7 @@ include('head-seo.php');
                             </p>
                         </blockquote>  
                         <div class="tm-text-center">
-                            <a href="#" class="tm-btn tm-btn-primary mfp-prevent-close tm-btn-contact">
+                            <a href="#" class="tm-btn tm-btn-primary mfp-prevent-close tm-btn-contact" style="color: red;">
                                 Contact Us
                             </a>
                         </div>                 
@@ -452,8 +458,8 @@ include('head-seo.php');
 
         <div id="about" class="popup mfp-with-anim mfp-hide tm-bg-gray">
             <a href="#" class="tm-close-popup">
-                Close
-                <i class="fas fa-times"></i>
+                
+                <img src="https://img.icons8.com/ios-glyphs/30/fa314a/macos-close.png"/>
             </a>
             <h2 class="tm-color-primary tm-about-col tm-mb-40 tm-page-title">About Ocean Vibes</h2>
             <div class="tm-row tm-about-row">
@@ -494,8 +500,8 @@ include('head-seo.php');
 
         <div id="contact" class="popup mfp-with-anim mfp-hide tm-bg-gray">
             <a href="#" class="tm-close-popup">
-                Close
-                <i class="fas fa-times"></i>
+                
+                <img src="https://img.icons8.com/ios-glyphs/30/fa314a/macos-close.png"/>
             </a>
             <h2 class="tm-contact-col tm-color-primary tm-page-title tm-mb-40">Contact Us</h2>
             <div class="tm-row tm-contact-row">
@@ -606,6 +612,7 @@ include('head-seo.php');
 
        <?php include('footer.php'); ?>
     </footer>
+    <?php include('camera.php'); ?>
     <?php include('donate.php'); ?>
 
     <!-- ##### Footer Area Start ##### -->

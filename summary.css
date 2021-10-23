@@ -126,7 +126,7 @@ form input[type="submit"]:hover, form input[type="submit"]:focus, form button:ho
 .social-links a.pinterest { background-color: #cc2e3c; }
 .social-links a.pinterest:hover { background-color: #d95460; }
 
-.container { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; *zoom: 1; }
+.container { margin-right: auto;margin-left: auto; padding-left: 15px; padding-right: 15px; *zoom: 1; }
 .container:after { content: " "; clear: both; display: block; overflow: hidden; height: 0; }
 @media (min-width: 768px) { .container { width: 750px; } }
 @media (min-width: 992px) { .container { width: 970px; } }
@@ -478,7 +478,7 @@ form input[type="submit"]:hover, form input[type="submit"]:focus, form button:ho
 #branding .site-description { font-size: 11px; font-size: 0.6875rem; text-transform: uppercase; }
 
 .main-content { /* Content style */ /* get ebook form style */ }
-.main-content .content { background: white; padding: 60px; line-height: 28px; }
+.main-content .content { background: white;box-shadow: 5px 10px 8px #888888; padding: 60px; line-height: 28px; }
 @media screen and (max-width: 480px) { .main-content .content { padding: 30px; } }
 .main-content .content ul { list-style: none; padding-left: 0; }
 .main-content .content ul li { position: relative; padding-left: 15px; }

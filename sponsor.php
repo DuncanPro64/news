@@ -136,6 +136,7 @@ include('connection.php');
 
         <!-- Main Footer Area -->
         <?php include('footer.php'); ?>
+        <?php include('camera.php'); ?>
     </footer>
     <!-- ##### Footer Area Start ##### -->
 
