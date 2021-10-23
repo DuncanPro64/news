@@ -1,44 +1,25 @@
 <?php
-
-include('connection.php');
-
-/* TESTED ON PHP Version 7.2.8. Refer to the version of your php if some/parts/whole has errors */
-/**
-* This function serves the purpose of saving the data into our database.
-* It has the connection it, so by just doing it right, you will be up and running without any struggles
-*
-* @param array. The M-PESA response array is passed into the function which we use PDO to insert it to our db.
-*
-**/
-
-function insert_response($jsonMpesaResponse){
-
-	# 1.1.2 Insert Response to Database
-	try{
-        $con = mysqli_connect("localhost","root","","vibes") or die ("error" . mysqli_error($con));
-		$insert = $con->prepare("INSERT INTO `mobile_payments`(`TransactionType`, `TransID`, `TransTime`,
-         `TransAmount`, `BusinessShortCode`, `BillRefNumber`, `InvoiceNumber`, `OrgAccountBalance`, `ThirdPartyTransID`,
-          `MSISDN`, `FirstName`, `MiddleName`, `LastName`) VALUES (:TransactionType,:TransID, :TransTime,
-           :TransAmount, :BusinessShortCode, :BillRefNumber, :InvoiceNumber, :OrgAccountBalance, :ThirdPartyTransID, 
-           :MSISDN, :FirstName, :MiddleName, :LastName)");
-		$insert->execute((array)($jsonMpesaResponse)) or die(mysqli_error($con));
-
-		# 1.1.2o Optional - Log the transaction to a .txt or .log file(May Expose your transactions if anyone gets the links, be careful with this. If you don't need it, comment it out or secure it)
-		$Transaction = fopen('Transaction.txt', 'a');
-		fwrite($Transaction, json_encode($jsonMpesaResponse));
-		fclose($Transaction);
-	}
-	catch(PDOException $e){
-
-		# 1.1.2b Log the error to a file. Optionally, you can set it to send a text message or an email notification during production.
-		$errLog = fopen('error.txt', 'a');
-		fwrite($errLog, $e->getMessage());
-		fclose($errLog);
-
-		# 1.1.2o Optional. Log the failed transaction. Remember, it has only failed to save to your database but M-PESA Transaction itself was successful. 
-		$logFailedTransaction = fopen('failedTransaction.txt', 'a');
-		fwrite($logFailedTransaction, json_encode($jsonMpesaResponse));
-		fclose($logFailedTransaction);
-	}
-}
+	$url = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl';
+	$access_token = ''; // check the mpesa_accesstoken.php file for this. No need to writing a new file here, just combine the code as in the tutorial.
+	$shortCode = 174379; // provide the short code obtained from your test credentials
+	/* This two files are provided in the project. */
+	$confirmationUrl = 'https://14c5-41-89-22-3.ngrok.io/news'; // path to your confirmation url. can be IP address that is publicly accessible or a url
+	$validationUrl = 'https://14c5-41-89-22-3.ngrok.io/news'; // path to your validation url. can be IP address that is publicly accessible or a url
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json','Authorization:Bearer '.$access_token)); //setting custom header
+	$curl_post_data = array(
+	  //Fill in the request parameters with valid values
+	  'ShortCode' => $shortCode,
+	  'ResponseType' => 'Confirmed',
+	  'ConfirmationURL' => $confirmationUrl,
+	  'ValidationURL' => $validationUrl
+	);
+	$data_string = json_encode($curl_post_data);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_POST, true);
+	curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
+	$curl_response = curl_exec($curl);
+	print_r($curl_response);
+	echo $curl_response;
 ?>

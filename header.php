@@ -17,7 +17,7 @@
                                 <div class="login d-flex">
                                     <a href="admin/login.php">LOGIN</a>
                                     <a href="admin/register.php">BECOME EDITOR</a>
-                                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">DONATE<i class="fas fa-donate"></i></a>
+                                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fas fa-donate fa-lg" style="color:white;padding-top:7px;"></i></a>
                                 </div>
                                 <!-- Search Form -->
                                 <div class="search-form">

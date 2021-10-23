@@ -1,10 +1,4 @@
-/* [Master Stylesheet - v1.0]
-- Template Name: The News Paper - News & Lifestyle Magazine Template
-- Template Author: Colorlib
-- Template URL: http://colorlib.com
-- Version: 1.0
-*/
-/*
+
 ###### Index of Stylesheet ######
 :: 1.0 Import Fonts
 :: 3.0 Base CSS
@@ -282,6 +276,21 @@ textarea:focus {
     #scrollUp {
       bottom: 30px;
       right: 30px; } }
+
+
+      /* donate icon */
+      .donate{
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-weight: 900;
+        color: white;
+        font-family: "Font Awesome 5 Free";
+      
+      }
 
 /* Button */
 .newspaper-btn {
