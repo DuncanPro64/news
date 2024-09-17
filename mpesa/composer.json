@@ -1,0 +1,36 @@
+{
+    "name": "patrickoluoch/mpesa",
+    "description": "M-Pesa API implementation",
+    "type": "library",
+    "keywords": ["mpesa", "safaricom", "transactions", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrick Oluoch",
+            "email": "developer@omugatvc.ac.ke"
+        },
+        {
+            "name": "Patrick Oluoch",
+            "email": "developer@omugatvc.ac.ke"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Patrick\\Mpesa\\": "src/Mpesa/"
+        }
+    },
+     "autoload-dev": {
+        "psr-4": {
+            "Patrick\\Mpesa\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "phpunit/phpunit": "~5.7|~6.2",
+        "jesseschalken/autoload-generator": "^0.2.3"
+    },
+    "minimum-stability": "stable"
+}
